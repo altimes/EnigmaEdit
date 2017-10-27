@@ -13,6 +13,7 @@ import AppKit
 
 typealias resultAndMessage = (status: Bool, message:String)
 
+
 extension ViewController
 {
   /// Create a move target that does not already exist

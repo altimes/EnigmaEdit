@@ -33,6 +33,9 @@ class FilmStrip: NSStackView
   
   private var debug = false
   
+  /// use this queue to synchronize access to requestedTimes array
+  private var filmStripProcessingQueue = DispatchQueue(label: "filmStripProcessingQueue")
+  
   override func draw(_ dirtyRect: NSRect) {
     super.draw(dirtyRect)
     
@@ -142,12 +145,15 @@ class FilmStrip: NSStackView
     // Create array of 7 times for filmstrip (never negative)
     let startSeconds = (time.seconds - 3.0*secondsApart) > 0.0 ? (time.seconds - 3.0*secondsApart) : 0.0
     
-    requestedTimes.removeAll()
-    for position in 0 ..< frames
-    {
-      requestedTimes.append(CMTime(seconds: startSeconds + Double(position)*secondsApart, preferredTimescale: CutsTimeConst.PTS_TIMESCALE) as NSValue)
-      self.arrangedSubviews[position].layer?.sublayers?[0].contents = self.getDefaultFilmStripImageForView(self.arrangedSubviews[position].frame)
+    filmStripProcessingQueue.sync {
+      self.requestedTimes.removeAll()
+      for position in 0 ..< frames
+      {
+        requestedTimes.append(CMTime(seconds: startSeconds + Double(position)*secondsApart, preferredTimescale: CutsTimeConst.PTS_TIMESCALE) as NSValue)
+        self.arrangedSubviews[position].layer?.sublayers?[0].contents = self.getDefaultFilmStripImageForView(self.arrangedSubviews[position].frame)
+      }
     }
+
     imageGenerator.generateCGImagesAsynchronously(forTimes: requestedTimes, completionHandler: handler)
   }
   
@@ -341,10 +347,20 @@ class FilmStrip: NSStackView
       Swift.print("requestedTime \(time.seconds)")
       Swift.print("actualTime \(actualTime.seconds)")
     }
-    if let _image = image, let viewIndex = requestedTimes.index(of: time as NSValue)
-    {
-      DispatchQueue.main.async  {
-        self.updateFilmstripWithImage(_image, atStripIndex: viewIndex)
+    
+//    if let _image = image, let viewIndex = requestedTimes.index(of: time as NSValue)
+//    {
+//      DispatchQueue.main.async  {
+//        self.updateFilmstripWithImage(_image, atStripIndex: viewIndex)
+//      }
+//    }
+    if let _image = image {
+      filmStripProcessingQueue.async {
+        if let viewIndex = self.requestedTimes.index(of: time as NSValue) {
+          DispatchQueue.main.async  {
+            self.updateFilmstripWithImage(_image, atStripIndex: viewIndex)
+          }
+        }
       }
     }
   }

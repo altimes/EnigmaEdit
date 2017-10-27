@@ -33,8 +33,10 @@ extension CGImage {
     return pixelData
   }
 }
+
 extension ViewController
 {
+  
   /// programatic boundaryHunt completed - remove hunter and reset butttons
   func boundaryHuntReset()
   {
@@ -47,6 +49,7 @@ extension ViewController
     forwardHuntButton.layer?.backgroundColor = view.layer?.backgroundColor
     backwardHuntButton.layer?.backgroundColor = view.layer?.backgroundColor
     boundaryAdHunter = nil
+    lastHuntButton = nil
   }
   
   /// Sets the colour surrounding the advert hunting buttons according to
@@ -55,7 +58,7 @@ extension ViewController
   func setHunterBackgroundColourByStep(_ button: NSButton, step: Double?)
   {
     guard (step != nil) else { return }
-    if abs(step!) < boundaryHunter.nearEnough {
+    if abs(step!) < BoundaryHunter.nearEnough {
       button.layer?.backgroundColor = NSColor.green.cgColor
     }
     else {
@@ -80,37 +83,41 @@ extension ViewController
   /// - parameter button:  initiating Button
   /// - parameter direction: direction to skip
   func doBinaryJump(button: NSButton, direction: huntDirection) {
-    var step: Double
     var jumpResult: String?
     
-    step = (direction == .forward) ? initialStep : -initialStep
     if boundaryAdHunter == nil {
-      boundaryAdHunter = boundaryHunter(firstJump: step, player: self.monitorView.player!, completionHander: seekCompletedOK)
+      var step: Double
+      step = (direction == .forward) ? initialStep : -initialStep
+      boundaryAdHunter = BoundaryHunter(firstJump: step, firstButton: button, player: self.monitorView.player!, seekCompletionFlag: &seekCompleted, completionHander: seekCompletedOK, seekHandler: self.seekHandler)
       // inject prefs
       boundaryAdHunter?.setFromPreferences(prefs: self.adHunterPrefs)
+      lastHuntButton = nil
     }
-    switch direction {
+    lastHuntButton = button
+    switch direction
+    {
     case .forward:
-      jumpResult = boundaryAdHunter?.jumpForward()
+      jumpResult = boundaryAdHunter?.jumpForward(using: button)
     case .backward:
-      jumpResult = boundaryAdHunter?.jumpBackward()
+      jumpResult = boundaryAdHunter?.jumpBackward(using: button)
     default:
       jumpResult = "Unexpectedly found direction " + direction.description
     }
     let message = jumpResult ?? "jump failed"
     if var gap = boundaryAdHunter?.jumpDistance {
       gap = fabs(gap)
-      if gap < boundaryHunter.reportGapValue {
+      if gap < BoundaryHunter.reportGapValue {
         var messageString = String(format:"%.2f",gap)
         let firstpoint = messageString.characters.index(of: ".")
 //        messageString = messageString.substring(from: firstpoint!)
         messageString = String(messageString[firstpoint!...])
-        if boundaryHunter.voiceReporting { voice.startSpeaking(messageString ) }
-        if boundaryHunter.visualReporting { updateVideoOverlay(updateText: message) }
+        if BoundaryHunter.voiceReporting { voice.startSpeaking(messageString ) }
+        if BoundaryHunter.visualReporting { updateVideoOverlay(updateText: message) }
       }
     }
     setStatusFieldStringValue(isLoggable: false, message: message)
     setHunterBackgroundColourByStep(button, step: boundaryAdHunter?.jumpDistance)
   }
   
+
 }

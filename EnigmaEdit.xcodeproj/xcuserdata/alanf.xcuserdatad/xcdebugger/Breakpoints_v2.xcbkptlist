@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EnigmaEdit/EnigmaWindowController.swift"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "metaDataViewController.swift"
-            timestampString = "527822993.745358"
+            timestampString = "530163813.360843"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "metaDataViewController.swift"
-            timestampString = "527822993.745552"
+            timestampString = "530163813.36143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "metaDataObject.swift"
-            timestampString = "527822993.745708"
+            timestampString = "528358722.854213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "metaDataViewController.swift"
-            timestampString = "527822993.745844"
+            timestampString = "530163813.36153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdHunterVCExtn.swift"
-            timestampString = "527822993.745983"
+            timestampString = "530163813.36165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "doBinaryJump(button:direction:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordingManagementVCExtn.swift"
-            timestampString = "527822993.746103"
+            timestampString = "528358722.855566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "countFilesWithSuffix(_:belowPath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -191,11 +191,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.496078"
+            timestampString = "530778056.98453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3055"
-            endingLineNumber = "3055"
+            startingLineNumber = "3311"
+            endingLineNumber = "3311"
             landmarkName = "clearCutMarks(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -207,7 +207,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/Recording.swift"
-            timestampString = "528015696.730784"
+            timestampString = "530778056.989127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -255,11 +255,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.496243"
+            timestampString = "530778056.989723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2027"
-            endingLineNumber = "2027"
+            startingLineNumber = "2074"
+            endingLineNumber = "2074"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
             <Locations>
@@ -303,11 +303,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsFile.swift"
-            timestampString = "528015696.73143"
+            timestampString = "529914813.209237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "945"
-            endingLineNumber = "945"
+            startingLineNumber = "948"
+            endingLineNumber = "948"
             landmarkName = "normalizedMarks(typeOfMark:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -319,11 +319,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.496385"
+            timestampString = "530778056.995512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2031"
-            endingLineNumber = "2031"
+            startingLineNumber = "2078"
+            endingLineNumber = "2078"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
             <Locations>
@@ -367,11 +367,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.496485"
+            timestampString = "530778057.00022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2435"
-            endingLineNumber = "2435"
+            startingLineNumber = "2561"
+            endingLineNumber = "2561"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -379,15 +379,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsFile.swift"
-            timestampString = "528015696.731636"
+            timestampString = "529914813.215246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "933"
-            endingLineNumber = "933"
+            startingLineNumber = "936"
+            endingLineNumber = "936"
             landmarkName = "wellOrdered()"
             landmarkType = "7">
          </BreakpointContent>
@@ -399,11 +399,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsFile.swift"
-            timestampString = "528015696.731729"
+            timestampString = "529914813.215324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "765"
-            endingLineNumber = "765"
+            startingLineNumber = "768"
+            endingLineNumber = "768"
             landmarkName = "validateInOut()"
             landmarkType = "7">
          </BreakpointContent>
@@ -415,11 +415,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsFile.swift"
-            timestampString = "528015696.731821"
+            timestampString = "529914813.215387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "745"
-            endingLineNumber = "745"
+            startingLineNumber = "748"
+            endingLineNumber = "748"
             landmarkName = "validateInOut()"
             landmarkType = "7">
          </BreakpointContent>
@@ -431,11 +431,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsFile.swift"
-            timestampString = "528015696.731913"
+            timestampString = "529914813.215447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "862"
-            endingLineNumber = "862"
+            startingLineNumber = "865"
+            endingLineNumber = "865"
             landmarkName = "wellOrdered()"
             landmarkType = "7">
          </BreakpointContent>
@@ -447,11 +447,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsFile.swift"
-            timestampString = "528015696.732004"
+            timestampString = "529914813.215508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "872"
-            endingLineNumber = "872"
+            startingLineNumber = "875"
+            endingLineNumber = "875"
             landmarkName = "wellOrdered()"
             landmarkType = "7">
             <Locations>
@@ -495,11 +495,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.496699"
+            timestampString = "530778057.005337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3137"
-            endingLineNumber = "3137"
+            startingLineNumber = "3393"
+            endingLineNumber = "3393"
             landmarkName = "removeEntry(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -511,7 +511,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsPreferencesController.swift"
-            timestampString = "527822993.769907"
+            timestampString = "528358722.857676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -527,7 +527,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsPreferencesController.swift"
-            timestampString = "527822993.770048"
+            timestampString = "528358722.858001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "196"
@@ -543,7 +543,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsPreferencesController.swift"
-            timestampString = "527822993.770167"
+            timestampString = "528358722.858079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -558,28 +558,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.496892"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "cuttable"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/CutsFile.swift"
-            timestampString = "528015696.732351"
+            timestampString = "529914813.218202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "897"
-            endingLineNumber = "897"
+            startingLineNumber = "900"
+            endingLineNumber = "900"
             landmarkName = "wellOrdered()"
             landmarkType = "7">
          </BreakpointContent>
@@ -591,11 +575,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.49702"
+            timestampString = "530778057.010458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "659"
-            endingLineNumber = "659"
+            startingLineNumber = "677"
+            endingLineNumber = "677"
             landmarkName = "flushPendingChangesFor(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -607,11 +591,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.497125"
+            timestampString = "530778057.014404"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "673"
-            endingLineNumber = "673"
+            startingLineNumber = "691"
+            endingLineNumber = "691"
             landmarkName = "flushPendingChangesFor(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -623,11 +607,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.497218"
+            timestampString = "530778057.01716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "911"
-            endingLineNumber = "911"
+            startingLineNumber = "933"
+            endingLineNumber = "933"
             landmarkName = "createTimelineOverlayView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -639,11 +623,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/FindFilesOperation.swift"
-            timestampString = "527822993.788167"
+            timestampString = "528358722.858604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "main()"
             landmarkType = "7">
          </BreakpointContent>
@@ -655,7 +639,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/Recording.swift"
-            timestampString = "528015696.732559"
+            timestampString = "530778057.019837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -703,13 +687,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.859217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "345"
             endingLineNumber = "345"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "nearestApIndexForPTSFromPlayer(ptsValue:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -719,11 +703,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.497416"
+            timestampString = "530778057.019992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3364"
-            endingLineNumber = "3364"
+            startingLineNumber = "3682"
+            endingLineNumber = "3682"
             landmarkName = "keyDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -735,11 +719,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EnigmaEdit/TimeLineView.swift"
-            timestampString = "527734716.232343"
+            timestampString = "530163813.398312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "draw(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -751,13 +735,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.86015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "292"
             endingLineNumber = "292"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "elapsedTimeFromPlayerTime(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -767,11 +751,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.497586"
+            timestampString = "530778057.023149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2250"
-            endingLineNumber = "2250"
+            startingLineNumber = "2311"
+            endingLineNumber = "2311"
             landmarkName = "updateCutsMarksGUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -783,13 +767,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.860362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "619"
             endingLineNumber = "619"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "checkForPTSGaps()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -799,13 +783,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.86043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "630"
             endingLineNumber = "630"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "checkForPTSGaps()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -815,11 +799,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.497742"
+            timestampString = "530778057.027096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "874"
-            endingLineNumber = "874"
+            startingLineNumber = "892"
+            endingLineNumber = "892"
             landmarkName = "timelineChanged()"
             landmarkType = "7">
          </BreakpointContent>
@@ -831,13 +815,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526288885.841404"
+            timestampString = "528358722.860614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "733"
             endingLineNumber = "733"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "videoSequences"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -847,13 +831,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526288885.841404"
+            timestampString = "528358722.860677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "827"
             endingLineNumber = "827"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "deriveRunTimePTSBetweenIndices(startIndex:endIndex:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -863,13 +847,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.860737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "309"
             endingLineNumber = "309"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "elapsedTimeFromPlayerTime(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -879,76 +863,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.860806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "363"
             endingLineNumber = "363"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.497969"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2538"
-            endingLineNumber = "2538"
-            landmarkName = "addPeriodicTimeObserver()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.ViewController.(addPeriodicTimeObserver () -&gt; ()).(closure #1)"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/ViewController.swift"
-                  timestampString = "525509012.18414"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2744"
-                  endingLineNumber = "2744"
-                  offsetFromSymbolStart = "10748">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.ViewController.(addPeriodicTimeObserver () -&gt; ()).(closure #1)"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/ViewController.swift"
-                  timestampString = "525509012.187406"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "2744"
-                  endingLineNumber = "2744"
-                  offsetFromSymbolStart = "16071">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.498059"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2312"
-            endingLineNumber = "2312"
-            landmarkName = "seekCompletedOK(_:)"
+            landmarkName = "nearestApIndexForPTSFromPlayer(ptsValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -959,13 +879,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.861086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "408"
             endingLineNumber = "408"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "gapsBetweenTimes(start:end:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -975,11 +895,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FilmStrip.swift"
-            timestampString = "526691850.561108"
+            timestampString = "530408805.215518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "updateFilmstripWithImage(_:atStripIndex:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -991,11 +911,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FilmStrip.swift"
-            timestampString = "526691850.561108"
+            timestampString = "530408805.215581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "getDefaultFilmStripImageForView(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1006,40 +926,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.498234"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2304"
-            endingLineNumber = "2304"
-            landmarkName = "seekCompletedOK(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.498329"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "isPlaying"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ObservedAVPlayer.swift"
-            timestampString = "525677028.325998"
+            timestampString = "528603453.615196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -1055,7 +943,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ObservedAVPlayer.swift"
-            timestampString = "525677161.811174"
+            timestampString = "528603453.615698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -1071,27 +959,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.49848"
+            timestampString = "530778057.030132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.498572"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1910"
-            endingLineNumber = "1910"
+            startingLineNumber = "1953"
+            endingLineNumber = "1953"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1103,11 +975,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.498675"
+            timestampString = "530778057.032769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1879"
-            endingLineNumber = "1879"
+            startingLineNumber = "1922"
+            endingLineNumber = "1922"
             landmarkName = "browseForFolder()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1119,11 +991,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.498781"
+            timestampString = "530778057.035342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2261"
-            endingLineNumber = "2261"
+            startingLineNumber = "2322"
+            endingLineNumber = "2322"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1135,11 +1007,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.498886"
+            timestampString = "530778057.037635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2274"
-            endingLineNumber = "2274"
+            startingLineNumber = "2335"
+            endingLineNumber = "2335"
             landmarkName = "setStatusFieldStringValue(isLoggable:message:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1151,13 +1023,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.862374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "662"
             endingLineNumber = "662"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "normalizedGaps"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1167,13 +1039,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526261882.390882"
+            timestampString = "528358722.862435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "644"
             endingLineNumber = "644"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "normalizedGaps"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1183,13 +1055,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/AccessPoints.swift"
-            timestampString = "526288885.841404"
+            timestampString = "528358722.862494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "670"
             endingLineNumber = "670"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "normalizedPCRs"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1199,11 +1071,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EnigmaEdit/TimeLineView.swift"
-            timestampString = "527734716.233933"
+            timestampString = "530163813.419609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "drawMarksReducedHeight(byPerecentage:normalizedMarks:withColour:with:isDashed:inContext:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1215,27 +1087,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.499137"
+            timestampString = "530778057.03998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2850"
-            endingLineNumber = "2850"
-            landmarkName = "moveMarkBySteps(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.499236"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3358"
-            endingLineNumber = "3358"
+            startingLineNumber = "3674"
+            endingLineNumber = "3674"
             landmarkName = "keyDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1247,11 +1103,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.499333"
+            timestampString = "530778057.044268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3371"
-            endingLineNumber = "3371"
+            startingLineNumber = "3695"
+            endingLineNumber = "3695"
             landmarkName = "keyDown(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1263,11 +1119,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.49943"
+            timestampString = "530778057.047028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1025"
-            endingLineNumber = "1025"
+            startingLineNumber = "1048"
+            endingLineNumber = "1048"
             landmarkName = "previousNextButtonAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1279,11 +1135,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.499532"
+            timestampString = "530778057.049268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1673"
-            endingLineNumber = "1673"
+            startingLineNumber = "1715"
+            endingLineNumber = "1715"
             landmarkName = "tooltipFrom(url:duration:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1295,12 +1151,301 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "528014071.499631"
+            timestampString = "530778057.051515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2962"
-            endingLineNumber = "2962"
+            startingLineNumber = "3066"
+            endingLineNumber = "3066"
             landmarkName = "tableView(_:didAdd:forRow:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.053749"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2924"
+            endingLineNumber = "2924"
+            landmarkName = "tableView(_:viewFor:row:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdHunterVCExtn.swift"
+            timestampString = "530163813.434887"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "doBinaryJump(button:direction:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.056011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3578"
+            endingLineNumber = "3578"
+            landmarkName = "undoJumpAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.05942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2394"
+            endingLineNumber = "2394"
+            landmarkName = "seekCompletedOK(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.062753"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2396"
+            endingLineNumber = "2396"
+            landmarkName = "seekCompletedOK(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.065255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2364"
+            endingLineNumber = "2364"
+            landmarkName = "seekInSequence(to:toleranceBefore:toleranceAfter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.067561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3150"
+            endingLineNumber = "3150"
+            landmarkName = "moveMarkBySteps(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.070259"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3080"
+            endingLineNumber = "3080"
+            landmarkName = "tableViewSelectionIsChanging(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.073464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2984"
+            endingLineNumber = "2984"
+            landmarkName = "tableViewSelectionDidChange(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.076637"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3433"
+            endingLineNumber = "3433"
+            landmarkName = "addMark(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.079791"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2370"
+            endingLineNumber = "2370"
+            landmarkName = "seekInSequence(to:toleranceBefore:toleranceAfter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.082361"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2480"
+            endingLineNumber = "2480"
+            landmarkName = "seekPlayerToMark(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.0848"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2599"
+            endingLineNumber = "2599"
+            landmarkName = "updateTimeLineGUI(currentCMTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.087047"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3583"
+            endingLineNumber = "3583"
+            landmarkName = "undoJumpAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.089296"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2388"
+            endingLineNumber = "2388"
+            landmarkName = "seekHandler(_:_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.09164"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3820"
+            endingLineNumber = "3820"
+            landmarkName = "replayJumps(history:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            timestampString = "530778057.09534"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3827"
+            endingLineNumber = "3827"
+            landmarkName = "replayJumps(history:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "event.trackingNumber == 0"
+            continueAfterRunningActions = "No"
+            filePath = "TimeLineControl.swift"
+            timestampString = "530778057.097709"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "cursorUpdate(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

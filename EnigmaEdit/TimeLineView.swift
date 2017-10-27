@@ -48,7 +48,12 @@ class TimeLineView: TimeLineControl {
   var gapPositionColour = NSColor.cyan.withAlphaComponent(0.75)
   var pcrPositionColour = NSColor.yellow.withAlphaComponent(0.75)
   var markWidth = CGFloat(3.0)
-  var currentPosition = [0.0]
+  var currentPosition = [Double]()
+  {
+    didSet {
+      self.setNeedsDisplay()
+    }
+  }
   var timeRangeSeconds: Double = 0.0
   let fontSize:CGFloat = 10
   let backgroundTextColour = NSColor(calibratedWhite: 0.5, alpha: 0.75)
@@ -96,6 +101,7 @@ class TimeLineView: TimeLineControl {
     bookMarkPositions = []
     outPositions = []
     inPositions = []
+    currentPosition = [0.0]
     self.backgroundColor = NSColor.blue
     self.scaleUnitSquare(to: NSSize(width: 1.0, height: 1.0))
     self.unZoomedBoundsWidth = self.bounds.width
