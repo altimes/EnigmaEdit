@@ -47,6 +47,7 @@
 		B73542D01E42DF6000AC4831 /* metaDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73542CF1E42DF6000AC4831 /* metaDataViewController.swift */; };
 		B73729771E1CA6CB007B9634 /* CutsUndoRedo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73729761E1CA6CB007B9634 /* CutsUndoRedo.swift */; };
 		B741D6671F5521D200C0C3D0 /* ObservedAVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6661F5521D200C0C3D0 /* ObservedAVPlayer.swift */; };
+		B74FDD3B1FAE76880092245B /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FDD3A1FAE76880092245B /* EnumCollection.swift */; };
 		B7529F561E074BC400C61A49 /* ExtendedEventDescriptorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7529F551E074BC400C61A49 /* ExtendedEventDescriptorController.swift */; };
 		B75540311F0DBBC700349A4F /* TimeLineControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75540301F0DBBC700349A4F /* TimeLineControl.swift */; };
 		B75540331F0DCB7400349A4F /* SwitchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75540321F0DCB7400349A4F /* SwitchControl.swift */; };
@@ -102,6 +103,7 @@
 		B73542CF1E42DF6000AC4831 /* metaDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = metaDataViewController.swift; sourceTree = "<group>"; };
 		B73729761E1CA6CB007B9634 /* CutsUndoRedo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CutsUndoRedo.swift; sourceTree = "<group>"; };
 		B741D6661F5521D200C0C3D0 /* ObservedAVPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservedAVPlayer.swift; sourceTree = "<group>"; };
+		B74FDD3A1FAE76880092245B /* EnumCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		B7529F551E074BC400C61A49 /* ExtendedEventDescriptorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedEventDescriptorController.swift; sourceTree = "<group>"; };
 		B75540301F0DBBC700349A4F /* TimeLineControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineControl.swift; sourceTree = "<group>"; };
 		B75540321F0DCB7400349A4F /* SwitchControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchControl.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		B72DB18B1E64DF1700295E30 /* Meta */ = {
 			isa = PBXGroup;
 			children = (
+				B74FDD3A1FAE76880092245B /* EnumCollection.swift */,
 				B71BB6081DFA1DCF0023F4BB /* MetaData.swift */,
 				B73542CF1E42DF6000AC4831 /* metaDataViewController.swift */,
 				B72FED1B1E6E154A00163E2F /* metaDataObject.swift */,
@@ -320,6 +323,7 @@
 				B71BB6141DFA1DCF0023F4BB /* MovieCuttingOperation.swift in Sources */,
 				B71BB6111DFA1DCF0023F4BB /* EitSupport.swift in Sources */,
 				B7D4ECE81F2D606A00B9367B /* keyStrokeCatch.swift in Sources */,
+				B74FDD3B1FAE76880092245B /* EnumCollection.swift in Sources */,
 				B71BB5F51DFA1D160023F4BB /* AppDelegate.swift in Sources */,
 				B71BB6261DFA1E0D0023F4BB /* TxDocument.swift in Sources */,
 				B71BB6101DFA1DCF0023F4BB /* DescriptorDecoder.swift in Sources */,

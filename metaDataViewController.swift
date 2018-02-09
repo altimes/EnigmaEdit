@@ -28,7 +28,7 @@ class metaDataViewController: NSViewController {
   
   var preferences = NSApplication.shared.delegate as! AppPreferences
   var movie: Recording?
-  var scrambledCheckBoxState = NSControl.StateValue.off {
+  @objc var scrambledCheckBoxState = NSControl.StateValue.off {
     didSet {
       print("Saw checkBox state change")
       sourceData.meta.scrambled = scrambledCheckBoxState == .off ? "0" : "1"
@@ -96,7 +96,12 @@ class metaDataViewController: NSViewController {
       }
       tags.stringValue = sourceData.meta.tags
       duration.stringValue = sourceData.meta.duration
-      duration.toolTip = CutEntry.timeTextFromPTS(UInt64(duration.stringValue)!)
+      if let metaDuration = PtsType(duration.stringValue) {
+        duration.toolTip = metaDuration.hhMMss
+      }
+      else {
+        duration.toolTip = "Metadata Absent"
+      }
       filesize.stringValue = sourceData.meta.programFileSize
       let serviceDataValue = sourceData.meta.serviceData
         serviceData.stringValue = serviceDataValue

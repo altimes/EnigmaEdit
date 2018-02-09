@@ -11,7 +11,8 @@ import AVFoundation
 
 class ObservedAVPlayer: AVPlayer {
 
-  public var playCommandFromUser: Bool = false
+  public var playCommandFromUser: PlayerCommand = .pause
+  public var playingState: Bool = false
   public var fullScreenTransition: Bool = false
   
   override var rate: Float {
@@ -19,11 +20,19 @@ class ObservedAVPlayer: AVPlayer {
       return super.rate
     }
     set {
-      if playCommandFromUser || !fullScreenTransition {
-       super.rate = newValue
+       print("Saw a rate change to \(newValue)")
+     playingState = (newValue != 0.0)
+     if (!fullScreenTransition) {
+        super.rate = newValue
       }
       else {
-        super.rate = 0.0
+        switch playCommandFromUser {
+        case .play:
+          super.rate = newValue
+        case .pause:
+          break
+          // do nothing
+        }
       }
     }
   }

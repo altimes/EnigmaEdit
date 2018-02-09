@@ -28,7 +28,7 @@ class EServiceRefViewController: NSViewController {
   
   @IBOutlet weak var serviceRefType: NSPopUpButton!
   @IBOutlet weak var ServiceID: NSTextField!
-  @IBOutlet weak var TranSportID: NSTextField!
+  @IBOutlet weak var TransportID: NSTextField!
   @IBOutlet weak var OriginalNetworkID: NSTextField!
   @IBOutlet weak var namespace: NSTextField!
   @IBOutlet weak var ParentServiceID: NSTextField!
@@ -59,11 +59,12 @@ class EServiceRefViewController: NSViewController {
         flag_ServiceIsNotPlayable.state = flags.contains(ENIGMA2_SERVICEREFERENCE_FLAGS.SERVICE_IS_NOT_PLAYABLE) ? .on : .off
         
         serviceRefType.removeAllItems()
-        serviceRefType.addItems(withTitles: ENIGMA2_SERVICEREFERENCE_TYPE.allValues())
-        serviceRefType.selectItem(withTitle: (serviceRef.serviceType?.description)!)
-        
+        serviceRefType.addItems(withTitles: ENIGMA2_SERVICEREFERENCE_TYPE.allDescriptions)
+//        serviceRefType.selectItem(withTitle: (serviceRef.serviceType?.description)!)
+        serviceRefType.selectItem(withTitle: ("\(serviceRef.serviceType ?? ENIGMA2_SERVICEREFERENCE_TYPE.unknown)"))
+
         ServiceID.stringValue = String(format:"0X%4.4X",serviceRef.service_id!)
-        TranSportID.stringValue = String(format:"0X%4.4X",serviceRef.transport_stream_id!)
+        TransportID.stringValue = String(format:"0X%4.4X",serviceRef.transport_stream_id!)
         OriginalNetworkID.stringValue = String(format:"0X%4.4X",serviceRef.original_network_id!)
         namespace.stringValue = String(format:"0X%8.8X",serviceRef.namespace!)
         ParentServiceID.stringValue = String(format:"0X%8.8X",serviceRef.parent_service_id!)

@@ -75,7 +75,7 @@ class ShortEventDescriptorViewController: NSViewController, NSTextFieldDelegate
     }
     descriptorLength.stringValue = String(format:"%3d",shortDescriptor.itemLength)
     tagField.stringValue = shortDescriptor.tag.asHexString()
-    if let nameLength = shortDescriptor.eventName?.contentText?.characters.count {
+    if let nameLength = shortDescriptor.eventName?.contentText?.count {
       eventNameLength.integerValue = nameLength
       eventNameCode.stringValue = (shortDescriptor.eventName?.characterTable.asHexString())!
       eventNameLength.isEnabled = true
@@ -90,7 +90,7 @@ class ShortEventDescriptorViewController: NSViewController, NSTextFieldDelegate
       eventNameLength.integerValue = 0
       
     }
-    if let textLength = shortDescriptor.eventText?.contentText?.characters.count {
+    if let textLength = shortDescriptor.eventText?.contentText?.count {
       eventTextLength.integerValue = textLength
       eventTextCode.stringValue = (shortDescriptor.eventText?.characterTable.asHexString())!
       eventTextLength.isEnabled = true

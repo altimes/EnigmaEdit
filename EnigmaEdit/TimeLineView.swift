@@ -51,7 +51,10 @@ class TimeLineView: TimeLineControl {
   var currentPosition = [Double]()
   {
     didSet {
-      self.setNeedsDisplay()
+      // needs a dispatch_main.async for this
+      DispatchQueue.main.async { [weak weakSelf = self ]  in
+        weakSelf?.setNeedsDisplay()
+      }
     }
   }
   var timeRangeSeconds: Double = 0.0
@@ -61,7 +64,6 @@ class TimeLineView: TimeLineControl {
   var unZoomedBoundsWidth: CGFloat = 0.0
   
   var debug = false
-  
   
   override func draw(_ dirtyRect: NSRect) {
     super.draw(dirtyRect)
@@ -133,51 +135,51 @@ class TimeLineView: TimeLineControl {
     return labelText
   }
   
-  // create a table that is guaranteed marks at 1.0 AND starts with an IN mark
-  func createFullNormalizedInOutTable(inPosition:[Double], outPosition:[Double]) -> [Double]
-  {
-    var inOutTable = [Double]()
-    // edge cases
-    // single IN mark
-    // single OUT mark
-    if (inPositions.count == 1 && outPositions.count == 0)
-    {
-      inOutTable = inPositions
-      inOutTable.append(1.0)
-    }
-    else if (inPositions.count == 0 && outPositions.count == 1)
-    {
-      inOutTable.append(0.0)
-      inOutTable.append(contentsOf: outPositions)
-    }
-    else {
-      // now determine if we start with IN or OUT
-      if (inPositions[0] < outPositions[0])
-      {
-        outPositions.insert(0.0, at: 0)
-      }
-      else { // lowest is OUT, so fabricate and IN at 0.0
-        inPositions.insert(0.0, at: 0)
-      }
-      // now interleave IN/OUT pairs watching for inconsistent marks
-      // if sequential OUTs with intervening IN, take earliest,
-      // if duplicate INs without intervening OUT take latest
-      var inIndex = 0
-      var outIndex = 0
-      while (inIndex < inPositions.count  || outIndex < outPositions.count)
-      {
-        if (inPositions[inIndex] < outPositions[outIndex])  {
-          inOutTable.append(outPositions[outIndex])
-          outIndex += 1
-        }
-        else {
-          inOutTable.append(inPositions[inIndex])
-          inIndex += 1
-        }
-      }
-    }
-    return inOutTable
-  }
+//  // create a table that is guaranteed marks at 1.0 AND starts with an IN mark
+//  func createFullNormalizedInOutTable(inPosition:[Double], outPosition:[Double]) -> [Double]
+//  {
+//    var inOutTable = [Double]()
+//    // edge cases
+//    // single IN mark
+//    // single OUT mark
+//    if (inPositions.count == 1 && outPositions.count == 0)
+//    {
+//      inOutTable = inPositions
+//      inOutTable.append(1.0)
+//    }
+//    else if (inPositions.count == 0 && outPositions.count == 1)
+//    {
+//      inOutTable.append(0.0)
+//      inOutTable.append(contentsOf: outPositions)
+//    }
+//    else {
+//      // now determine if we start with IN or OUT
+//      if (inPositions[0] < outPositions[0])
+//      {
+//        outPositions.insert(0.0, at: 0)
+//      }
+//      else { // lowest is OUT, so fabricate and IN at 0.0
+//        inPositions.insert(0.0, at: 0)
+//      }
+//      // now interleave IN/OUT pairs watching for inconsistent marks
+//      // if sequential OUTs with intervening IN, take earliest,
+//      // if duplicate INs without intervening OUT take latest
+//      var inIndex = 0
+//      var outIndex = 0
+//      while (inIndex < inPositions.count  || outIndex < outPositions.count)
+//      {
+//        if (inPositions[inIndex] < outPositions[outIndex])  {
+//          inOutTable.append(outPositions[outIndex])
+//          outIndex += 1
+//        }
+//        else {
+//          inOutTable.append(inPositions[inIndex])
+//          inIndex += 1
+//        }
+//      }
+//    }
+//    return inOutTable
+//  }
   
   func drawInOutMarks(inContext context: CGContext?)
   {

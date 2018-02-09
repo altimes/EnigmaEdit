@@ -108,7 +108,7 @@ extension ViewController
       gap = fabs(gap)
       if gap < BoundaryHunter.reportGapValue {
         var messageString = String(format:"%.2f",gap)
-        let firstpoint = messageString.characters.index(of: ".")
+        let firstpoint = messageString.index(of: ".")
 //        messageString = messageString.substring(from: firstpoint!)
         messageString = String(messageString[firstpoint!...])
         if BoundaryHunter.voiceReporting { voice.startSpeaking(messageString ) }

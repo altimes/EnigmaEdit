@@ -85,7 +85,18 @@ extension ViewController
     return result
   }
   
-  
+  /// Look for trash in the PVR Mount point
+  func findRemoteTrashDirectoryFor(currentDirectory: String) -> String
+  {
+    let mountPath = generalPrefs.systemConfig.pvrSettings[pvrIndex].cutLocalMountRoot.components(separatedBy: "/")
+    let pathElements = selectedDirectory.components(separatedBy: "/")
+    let rootElements = pathElements[0 ... mountPath.count]
+    let rootPath = rootElements.joined(separator: "/")
+    let trashDirectory = rootPath + "/" + trashDirectoryName
+    return trashDirectory
+  }
+
+
   /// Delete from the PVR and move to its trash folder
   // TODO: implement PutBack code similar to local operation, thinking about NAS use cases
   // TODO: for Enigma boxes, implement as ssh operation (performance)
@@ -96,7 +107,7 @@ extension ViewController
     // look for .Trash below firstdirectory below mount point
     let mountPath = generalPrefs.systemConfig.pvrSettings[pvrIndex].cutLocalMountRoot.components(separatedBy: "/")
     let pathElements = selectedDirectory.components(separatedBy: "/")
-    let rootElements = pathElements[0 ... mountPath.count]
+    let rootElements = pathElements[0 ..< mountPath.count]
     let rootPath = rootElements.joined(separator: "/")
     let trashDirectory = rootPath + "/" + trashDirectoryName
     if FileManager().fileExists(atPath: trashDirectory) {
@@ -202,6 +213,7 @@ extension ViewController
     }
     fileCountTask.standardOutput = outPipe
     fileCountTask.standardError = errPipe
+    if (debug) { print("--> \(fileCountTask.arguments!) <--") }
     fileCountTask.launch()
     let handle = outPipe.fileHandleForReading
     let data = handle.readDataToEndOfFile()
