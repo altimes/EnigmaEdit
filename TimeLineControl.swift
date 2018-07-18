@@ -314,6 +314,7 @@ class TimeLineControl: NSControl
     {
       let originAdjustment = CGFloat(normalizeStep) * originalWidth
       if (debug) { Swift.print("moving bounds by \(originAdjustment)") }
+      // FIXME: somehow getting called on detached thread
       self.bounds.origin.x = self.bounds.origin.x + originAdjustment
     }
   }
