@@ -9,7 +9,7 @@
 //
 extension NSView {
   
-  var backgroundColor: NSColor? {
+  var bookMarkBackgroundColor: NSColor? {
     
     get {
       if let colorRef = self.layer?.backgroundColor {
@@ -104,7 +104,7 @@ class TimeLineView: TimeLineControl {
     outPositions = []
     inPositions = []
     currentPosition = [0.0]
-    self.backgroundColor = NSColor.blue
+    self.bookMarkBackgroundColor = NSColor.blue
     self.scaleUnitSquare(to: NSSize(width: 1.0, height: 1.0))
     self.unZoomedBoundsWidth = self.bounds.width
   }

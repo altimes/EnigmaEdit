@@ -17,26 +17,32 @@ typealias resultAndMessage = (status: Bool, message:String)
 extension ViewController
 {
   /// Create a move target that does not already exist
-  ///  - parameter sourceMoviePath: path of the source recording
-  ///  - parameter trashDirectory: path of the trash directory
+  /// - parameter sourceMoviePath: path of the source recording
+  /// - parameter trashDirectory: path of the trash directory
   ///  - returns: target path name for moving to trash
   func safeMoveTarget(sourceMoviePath: String, to trashDirectory:String ) -> String
   {
+    // Use Source2Files plugin convention for handling multiple recordings of same name in same directory
+    // with is to append _nnn to the recording name part of file
     var duplicate: Int = 0
+    var duplicationText:String {
+      return String(format:"_03.0d%", duplicate)
+    }
     let targetComponents = sourceMoviePath.components(separatedBy: "/")
     var targetName = targetComponents[targetComponents.count-1]
     var targetPath = trashDirectory+"/"+targetName
+    // check for existence of target file
     while (FileManager().fileExists(atPath: targetPath)) {
       duplicate += 1
       var nameComponents = targetName.components(separatedBy: ".")
       let lastIndex = nameComponents.count - 1
       if (nameComponents[lastIndex] == "ts" || nameComponents[lastIndex] == "eit")
       {
-        nameComponents[lastIndex-1] = nameComponents[lastIndex-1]+"(\(duplicate))"
+        nameComponents[lastIndex-1] = nameComponents[lastIndex-1]+duplicationText
         targetName = nameComponents.joined(separator: ".")
       }
       else {
-        nameComponents[lastIndex-2] = nameComponents[lastIndex-2]+"(\(duplicate))"
+        nameComponents[lastIndex-2] = nameComponents[lastIndex-2]+duplicationText
         targetName = nameComponents.joined(separator: ".")
       }
       targetPath = trashDirectory+"/"+targetName
@@ -76,6 +82,7 @@ extension ViewController
           }
           catch _ {
             // TODO: put a message, beep, pause here (modal dialog ?)
+            NSSound.beep()
             result.message += "\nPartial restore failed for \(doneURL[doneIndex])"
           }
         }
@@ -85,8 +92,10 @@ extension ViewController
     return result
   }
   
-  /// Look for trash in the PVR Mount point
-  func findRemoteTrashDirectoryFor(currentDirectory: String) -> String
+  /// Generate name of trash for PVR Mount point based on naming conventions
+  /// - parameter currentDirectory: full path of selected directory
+  /// - returns: full path the related trash directory
+  func generateRemotePVRTrashDirectoryFor(currentDirectory: String) -> String
   {
     let mountPath = generalPrefs.systemConfig.pvrSettings[pvrIndex].cutLocalMountRoot.components(separatedBy: "/")
     let pathElements = selectedDirectory.components(separatedBy: "/")
@@ -110,6 +119,7 @@ extension ViewController
     let rootElements = pathElements[0 ..< mountPath.count]
     let rootPath = rootElements.joined(separator: "/")
     let trashDirectory = rootPath + "/" + trashDirectoryName
+    // Check existence of Trash directory
     if FileManager().fileExists(atPath: trashDirectory) {
       let fromPaths = recording.movieFiles
       disconnectCurrentMovieFromGUI()
@@ -129,7 +139,7 @@ extension ViewController
         }
       }
     }
-    else  // no such file
+    else  // no such directory
     {
       result.message = String(format: logMessage.noTrashFolder, trashDirectory)
       result.status = false
@@ -171,7 +181,8 @@ extension ViewController
         // simulate mouse down
         // to ensure that select file perceives a "change" when we have reduced the array and are reselecting the same index
         if (mouseDownPopUpIndex! == nextIndexToSelect) { mouseDownPopUpIndex! += 1 }
-        currentFile.selectItem(at: nextIndexToSelect)
+//        currentFile.selectItem(at: nextIndexToSelect)
+        currentFile.filter?.selectNextVisible(from: nextIndexToSelect)
         selectFile(currentFile)
         currentFile.isEnabled = true
         setPrevNextButtonState(filelistIndex)

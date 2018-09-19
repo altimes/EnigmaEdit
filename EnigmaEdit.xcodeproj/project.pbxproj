@@ -36,6 +36,9 @@
 		B71BB6261DFA1E0D0023F4BB /* TxDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71BB61F1DFA1E0D0023F4BB /* TxDocument.swift */; };
 		B71BB6271DFA1E0D0023F4BB /* userGuide.txt in Resources */ = {isa = PBXBuildFile; fileRef = B71BB6201DFA1E0D0023F4BB /* userGuide.txt */; };
 		B71BB62A1DFA1F1B0023F4BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71BB6281DFA1F1B0023F4BB /* Main.storyboard */; };
+		B72D2F9F211D36C100599CFB /* PopUpFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D2F9E211D36C100599CFB /* PopUpFilter.swift */; };
+		B72D2FA1211D376100599CFB /* PopUpWithContextFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D2FA0211D376100599CFB /* PopUpWithContextFilter.swift */; };
+		B72D2FA3211D39A600599CFB /* PopUpWithStatusFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D2FA2211D39A600599CFB /* PopUpWithStatusFilter.swift */; };
 		B72FED1C1E6E154A00163E2F /* metaDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FED1B1E6E154A00163E2F /* metaDataObject.swift */; };
 		B730A4A01E4191E4000E10E7 /* scissors_icon-icons.com_50046-32.png in Resources */ = {isa = PBXBuildFile; fileRef = B730A49D1E4191E4000E10E7 /* scissors_icon-icons.com_50046-32.png */; };
 		B730A4A11E4191E4000E10E7 /* scissors_icon-icons.com_50046-256.png in Resources */ = {isa = PBXBuildFile; fileRef = B730A49E1E4191E4000E10E7 /* scissors_icon-icons.com_50046-256.png */; };
@@ -92,6 +95,9 @@
 		B71BB61F1DFA1E0D0023F4BB /* TxDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TxDocument.swift; path = ../../CutsEditor/TxDocument.swift; sourceTree = "<group>"; };
 		B71BB6201DFA1E0D0023F4BB /* userGuide.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = userGuide.txt; path = ../../CutsEditor/userGuide.txt; sourceTree = "<group>"; };
 		B71BB6291DFA1F1B0023F4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../CutsEditor/CutsEditor/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B72D2F9E211D36C100599CFB /* PopUpFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpFilter.swift; sourceTree = "<group>"; };
+		B72D2FA0211D376100599CFB /* PopUpWithContextFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWithContextFilter.swift; sourceTree = "<group>"; };
+		B72D2FA2211D39A600599CFB /* PopUpWithStatusFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWithStatusFilter.swift; sourceTree = "<group>"; };
 		B72FED1B1E6E154A00163E2F /* metaDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = metaDataObject.swift; sourceTree = "<group>"; };
 		B730A49D1E4191E4000E10E7 /* scissors_icon-icons.com_50046-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scissors_icon-icons.com_50046-32.png"; path = "EnigmaEdit/Assets.xcassets/AppIcon.appiconset/scissors_icon-icons.com_50046-32.png"; sourceTree = "<group>"; };
 		B730A49E1E4191E4000E10E7 /* scissors_icon-icons.com_50046-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scissors_icon-icons.com_50046-256.png"; path = "EnigmaEdit/Assets.xcassets/AppIcon.appiconset/scissors_icon-icons.com_50046-256.png"; sourceTree = "<group>"; };
@@ -130,6 +136,9 @@
 		B71BB5D91DFA1C820023F4BB = {
 			isa = PBXGroup;
 			children = (
+				B72D2F9E211D36C100599CFB /* PopUpFilter.swift */,
+				B72D2FA0211D376100599CFB /* PopUpWithContextFilter.swift */,
+				B72D2FA2211D39A600599CFB /* PopUpWithStatusFilter.swift */,
 				B741D6661F5521D200C0C3D0 /* ObservedAVPlayer.swift */,
 				B782D36B1F52AC4B00737E70 /* FilmStrip.swift */,
 				B7D4ECE71F2D606A00B9367B /* keyStrokeCatch.swift */,
@@ -318,6 +327,7 @@
 				B71BB6121DFA1DCF0023F4BB /* FindFilesOperation.swift in Sources */,
 				B75540331F0DCB7400349A4F /* SwitchControl.swift in Sources */,
 				B71BB6191DFA1DCF0023F4BB /* ViewController.swift in Sources */,
+				B72D2FA3211D39A600599CFB /* PopUpWithStatusFilter.swift in Sources */,
 				B741D6671F5521D200C0C3D0 /* ObservedAVPlayer.swift in Sources */,
 				B71BB6171DFA1DCF0023F4BB /* SortPreferencesViewController.swift in Sources */,
 				B71BB6141DFA1DCF0023F4BB /* MovieCuttingOperation.swift in Sources */,
@@ -343,8 +353,10 @@
 				B71BB6011DFA1D730023F4BB /* CutsFile.swift in Sources */,
 				B71BB6031DFA1D730023F4BB /* CuttingQueue.swift in Sources */,
 				B7E6F6E01E00B35C00F0ADA6 /* ShortEventDescriptorViewController.swift in Sources */,
+				B72D2FA1211D376100599CFB /* PopUpWithContextFilter.swift in Sources */,
 				B782D36C1F52AC4C00737E70 /* FilmStrip.swift in Sources */,
 				B75540311F0DBBC700349A4F /* TimeLineControl.swift in Sources */,
+				B72D2F9F211D36C100599CFB /* PopUpFilter.swift in Sources */,
 				B71BB6001DFA1D730023F4BB /* CutsData.swift in Sources */,
 				B71BB5FE1DFA1D730023F4BB /* Constants.swift in Sources */,
 				B71BB6151DFA1DCF0023F4BB /* pvrPreferences.swift in Sources */,
@@ -427,6 +439,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 			};
 			name = Debug;
 		};
@@ -477,6 +490,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 			};
 			name = Release;
 		};
