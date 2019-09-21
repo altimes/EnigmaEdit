@@ -188,7 +188,7 @@ class FilmStrip: NSStackView
     deltaTextLayer.fontSize = fontHeight
     deltaTextLayer.contentsScale = (NSScreen.main?.backingScaleFactor)!
     let transWhite = NSColor(calibratedRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)
-    deltaTextLayer.alignmentMode = kCAAlignmentCenter
+    deltaTextLayer.alignmentMode = CATextLayerAlignmentMode.center
     deltaTextLayer.foregroundColor = transWhite.cgColor
     //    deltaTextLayer.alignment = NSTextAlignment.justified
     return deltaTextLayer
@@ -337,11 +337,11 @@ class FilmStrip: NSStackView
   /// To do this, we need the base start time to calculate an array index
   /// from the "requested" time.
   /// Also need to access the "spacing" of the frames
-  func assetImageCompletionHandler (time:CMTime, image: CGImage?, actualTime:CMTime, result:AVAssetImageGeneratorResult, error: Error?)
+  func assetImageCompletionHandler (time:CMTime, image: CGImage?, actualTime:CMTime, result:AVAssetImageGenerator.Result, error: Error?)
   {
     //    let resultAsString = result == AVAssetImageGeneratorResult.succeeded ? "Succeeded" : (result == AVAssetImageGeneratorResult.failed) ? "Failed": "Cancelled"
     //    print("result: \(resultAsString) requested at time \(time.seconds)")
-    if (result == AVAssetImageGeneratorResult.failed && debug)
+    if (result == AVAssetImageGenerator.Result.failed && debug)
     {
       Swift.print("error: \(String(describing: error))")
       Swift.print("requestedTime \(time.seconds)")
@@ -356,7 +356,7 @@ class FilmStrip: NSStackView
 //    }
     if let _image = image {
       filmStripProcessingQueue.async {
-        if let viewIndex = self.requestedTimes.index(of: time as NSValue) {
+        if let viewIndex = self.requestedTimes.firstIndex(of: time as NSValue) {
           DispatchQueue.main.async  {
             self.updateFilmstripWithImage(_image, atStripIndex: viewIndex)
           }
@@ -367,13 +367,13 @@ class FilmStrip: NSStackView
   
   func singleImageAtTime( seconds: Double, generator: AVAssetImageGenerator, imageSize:CGSize?) -> NSImage?
   {
-    let fiveMinutes = CMTimeMakeWithSeconds(seconds, 600)
+    let fiveMinutes = CMTimeMakeWithSeconds(seconds, preferredTimescale: 600)
     var actualTime = CMTime()
     var scaledImage : NSImage?
     do {
       let image = try generator.copyCGImage(at:fiveMinutes, actualTime: &actualTime)
-      let actualTimeString = String(describing: CMTimeCopyDescription(nil, actualTime))
-      let requestedTimeString = String(describing: CMTimeCopyDescription(nil, fiveMinutes))
+      let actualTimeString = String(describing: CMTimeCopyDescription(allocator: nil, time: actualTime))
+      let requestedTimeString = String(describing: CMTimeCopyDescription(allocator: nil, time: fiveMinutes))
       Swift.print("Got image at times: Asked for  \(requestedTimeString), got \(actualTimeString)");
       
       // Do something interesting with the image.

@@ -123,7 +123,7 @@ class metaDataViewController: NSViewController {
   override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
     if let disclosureButton = sender as? NSButton
     {
-      if ((segue.identifier!).rawValue == "eServiceRef" && disclosureButton.state == .on) {
+      if ((segue.identifier!) == "eServiceRef" && disclosureButton.state == .on) {
         if let srvc = segue.destinationController as? EServiceRefViewController
         {
           srvc.eserviceRef = sourceData.meta.decodeServiceReference(sourceData.meta.serviceReference)

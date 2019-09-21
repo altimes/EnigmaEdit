@@ -31,7 +31,6 @@ class PopUpWithContextFilter: NSPopUpButton {
   
   /// For subclass to implement
   open func commonInit() {
-    
   }
   
   override func rightMouseDown(with event: NSEvent)
@@ -48,4 +47,5 @@ class PopUpWithContextFilter: NSPopUpButton {
     NSMenu.popUpContextMenu(contextMenu, with: event, for: self)
     super.rightMouseDown(with: event)
   }
+
 }

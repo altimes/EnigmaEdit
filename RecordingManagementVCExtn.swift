@@ -22,7 +22,7 @@ extension ViewController
   ///  - returns: target path name for moving to trash
   func safeMoveTarget(sourceMoviePath: String, to trashDirectory:String ) -> String
   {
-    // Use Source2Files plugin convention for handling multiple recordings of same name in same directory
+    // Use Series2Folder plugin convention for handling multiple recordings of same name in same directory
     // with is to append _nnn to the recording name part of file
     var duplicate: Int = 0
     var duplicationText:String {

@@ -279,7 +279,7 @@ class TimeLineControl: NSControl
     }
     self.bounds.origin.x = CGFloat(lhXOriginPos)
     //    Swift.print("zoomed bounds after unit square change -> \(self.bounds)")
-    self.setNeedsDisplay()
+    self.needsDisplay = true
   }
   
   /// Change control bounds back to original full range
@@ -289,7 +289,7 @@ class TimeLineControl: NSControl
       self.bounds = bounds
       currentZoomFactor = 1.0
       self.scaleUnitSquare(to: NSSize(width: currentZoomFactor, height: 1.0))
-      self.setNeedsDisplay()
+      self.needsDisplay = true
       oldBounds = nil
     }
   }

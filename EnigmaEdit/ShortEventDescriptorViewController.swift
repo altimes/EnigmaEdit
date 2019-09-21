@@ -135,7 +135,7 @@ class ShortEventDescriptorViewController: NSViewController, NSTextFieldDelegate
   
   // MARK: - Delegate functions
   
-  override func controlTextDidEndEditing(_ obj: Notification)
+  func controlTextDidEndEditing(_ obj: Notification)
   {
     let textField = obj.object as! NSTextField
 //        print (#function+":"+textField.stringValue)
@@ -218,12 +218,12 @@ class ShortEventDescriptorViewController: NSViewController, NSTextFieldDelegate
   
   @IBAction func done(_ sender: NSButton) {
     // TODO: build a "modified" and warn on exit without save of changes
-    self.presenting?.dismiss(sender)
+    self.presentingViewController?.dismiss(sender)
   }
   
   @IBAction func cancel(_ sender: NSButton) {
     // TODO: build a "modified" and warn on exit without save of changes
-   self.presenting?.dismiss(sender)
+   self.presentingViewController?.dismiss(sender)
    self.view.window?.close()
   }
   

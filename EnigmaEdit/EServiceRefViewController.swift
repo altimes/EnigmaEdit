@@ -87,7 +87,7 @@ class EServiceRefViewController: NSViewController {
   
   // reset disclosure button to "closed"
   override func viewWillDisappear() {
-    if let parentVC = self.presenting as? metaDataViewController
+    if let parentVC = self.presentingViewController as? metaDataViewController
     {
       parentVC.eServiceDisclosureButton.state = .off
     }

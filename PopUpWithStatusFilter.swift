@@ -33,8 +33,11 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
           ("Partial",#selector(PopUpWithStatusFilter.showPartial)),
           ("Ready",#selector(PopUpWithStatusFilter.showReady)),
           ("Cut",#selector(PopUpWithStatusFilter.showCut)),
-          ("All",#selector(PopUpWithStatusFilter.showAll))
+          ("All",#selector(PopUpWithStatusFilter.showAll)),
+          ("Named",#selector(PopUpWithStatusFilter.showNamed))
       ])
+      self.autoenablesItems = false
+      self.isEnabled = false
     }
     
     typealias MatchStatus = (_ arrayIndex: Int)->Bool
@@ -42,6 +45,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     {
       for index in 0..<self.itemArray.count
       {
+        print("hide test for \(self.itemArray[index].attributedTitle!.string) is \(hideTest(index))")
         self.itemArray[index].isHidden = hideTest(index)
       }
       self.filter?.updatePopUp()
@@ -54,11 +58,21 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     var hide = true
     let firstCharRange = NSMakeRange(0, 1)
     if let attributes = self.itemArray[index].attributedTitle?.fontAttributes(in:firstCharRange) {
-      if let textColour = attributes[NSAttributedStringKey.foregroundColor]
+      if let textColour = attributes[NSAttributedString.Key.foregroundColor]
       {
         hide =  (textColour as! NSColor) != colourCode
       }
     }
+    return hide
+  }
+  
+  // Hide everthing that does not match entered string case insensitively
+  private func doesTitleContainString(_ index:Int, target:String) -> Bool {
+    var hide: Bool = true
+    // make case insensitive
+    let matchTo = target.uppercased()
+    let itemString = self.itemArray[index].attributedTitle!.string.uppercased()
+    hide = !itemString.contains(matchTo)
     return hide
   }
   
@@ -93,5 +107,26 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
   {
     setVisibilty(isHidden: {index in  return isTitleAtIndex(index, matching: colourLookup[.readyToCutColour]!)})
   }
-    
+  
+  /// filter by name contents
+  @objc private func showNamed()
+  {
+    var textField = NSTextField(frame: NSRect(x: 0.0, y: 0.0, width: 80.0, height: 24.0))
+    let alert = NSAlert()
+    alert.window.title = "Filter by Name"
+    alert.messageText = "Enter string to filter list (case insensitive)"
+//    alert.informativeText = "Enter string to match"
+    alert.alertStyle = NSAlert.Style.informational
+    alert.accessoryView = textField
+    alert.runModal()
+    setVisibilty(isHidden: {index in  return doesTitleContainString(index, target: textField.stringValue)})
+  }
+  
+  // Determine if menu item should be enabled or not
+  @objc func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+//    print("In function "+#file+"/"+#function)
+    return filter?.filterMenuEnabled ?? false
+  }
+  
+
   }

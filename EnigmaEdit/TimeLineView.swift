@@ -53,7 +53,7 @@ class TimeLineView: TimeLineControl {
     didSet {
       // needs a dispatch_main.async for this
       DispatchQueue.main.async { [weak weakSelf = self ]  in
-        weakSelf?.setNeedsDisplay()
+        weakSelf?.needsDisplay = true
       }
     }
   }
@@ -127,11 +127,11 @@ class TimeLineView: TimeLineControl {
     let heightFactor = fontSize
     let zeroFactor = CGFloat(0.0)
     let fontMatrix = [widthFactor, zeroFactor, zeroFactor, heightFactor, zeroFactor, zeroFactor]
-    let labelText = NSMutableAttributedString(string: resultString, attributes: [NSAttributedStringKey.font:NSFont(name: textFontName, matrix: fontMatrix)!])
+    let labelText = NSMutableAttributedString(string: resultString, attributes: [NSAttributedString.Key.font:NSFont(name: textFontName, matrix: fontMatrix)!])
     fullRange = NSRange(location:0,length:labelText.length)
     
-    labelText.addAttributes([NSAttributedStringKey.backgroundColor:backgroundTextColour], range: fullRange)
-    labelText.addAttributes([NSAttributedStringKey.foregroundColor:NSColor.white], range: fullRange)
+    labelText.addAttributes([NSAttributedString.Key.backgroundColor:backgroundTextColour], range: fullRange)
+    labelText.addAttributes([NSAttributedString.Key.foregroundColor:NSColor.white], range: fullRange)
     return labelText
   }
   
@@ -199,7 +199,7 @@ class TimeLineView: TimeLineControl {
   
   func drawBookMarks(inContext context: CGContext?)
   {
-    drawMarksReducedHeight(byPerecentage: 0.6, normalizedMarks: bookMarkPositions, withColour: bookMarkColour.cgColor, with: .roundLineCapStyle, isDashed: false, inContext: context)
+    drawMarksReducedHeight(byPerecentage: 0.6, normalizedMarks: bookMarkPositions, withColour: bookMarkColour.cgColor, with: .round, isDashed: false, inContext: context)
     drawTimes(normalizedMarks: bookMarkPositions, withColour: NSColor.white.cgColor, inContext: context)
   }
   
@@ -215,7 +215,7 @@ class TimeLineView: TimeLineControl {
   
   func drawPCRPosition(inContext context: CGContext?)
   {
-    drawMarksReducedHeight(byPerecentage: 0.0, normalizedMarks: pcrPositions, withColour: pcrPositionColour.cgColor, with: .buttLineCapStyle, isDashed: true, inContext: context)
+    drawMarksReducedHeight(byPerecentage: 0.0, normalizedMarks: pcrPositions, withColour: pcrPositionColour.cgColor, with: .butt, isDashed: true, inContext: context)
   }
   
   func drawMarksReducedHeight(byPerecentage: Double, normalizedMarks: [Double], withColour markColor: CGColor, with capStyle: NSBezierPath.LineCapStyle, isDashed: Bool, inContext context: CGContext?)
@@ -237,7 +237,7 @@ class TimeLineView: TimeLineControl {
     // reduce vertical to create 'rounded' box shape
     var bottom = CGFloat(0.0)
     var top = self.bounds.height
-    if (capStyle == .squareLineCapStyle || capStyle == .roundLineCapStyle) {
+    if (capStyle == .square || capStyle == .round) {
        bottom = CGFloat(0.0) + markWidth*0.5
        top = self.bounds.height - markWidth*0.5 - CGFloat(byPerecentage) * self.bounds.height
    }
@@ -253,7 +253,7 @@ class TimeLineView: TimeLineControl {
   
   func drawMarks(normalizedMarks: [Double], withColour markColor: CGColor, inContext context: CGContext?, isDashed dashed: Bool)
   {
-    drawMarksReducedHeight(byPerecentage: 0.0, normalizedMarks: normalizedMarks, withColour: markColor, with: .roundLineCapStyle, isDashed: dashed, inContext: context)
+    drawMarksReducedHeight(byPerecentage: 0.0, normalizedMarks: normalizedMarks, withColour: markColor, with: .round, isDashed: dashed, inContext: context)
   }
   
   func drawTimes(normalizedMarks: [Double], withColour markColor: CGColor, inContext context: CGContext?)
@@ -318,12 +318,12 @@ class TimeLineView: TimeLineControl {
   
   func setGapPositions(normalizedPositions:[Double]) {
     gapPositions = normalizedPositions
-    self.setNeedsDisplay()
+    self.needsDisplay = true
   }
   
   func setPCRPositions(normalizedPositions:[Double]) {
     pcrPositions = normalizedPositions
-    self.setNeedsDisplay()
+    self.needsDisplay = true
   }
  
   /// Send the delta (normalized) of the new and old current position to cause the 

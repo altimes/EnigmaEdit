@@ -10,10 +10,15 @@
 
 import Cocoa
 
+// TODO: add control to validate/respond to colouring being complete and filtering being possible
+
+// TODO: add dynamic name filter to filter by recording name
+
 struct PopUpFilter {
   var menu: NSMenu?
   var popUp: NSPopUpButton?
-  
+  public var filterMenuEnabled = false
+
   init(popUpButton: NSPopUpButton) {
     menu = NSMenu(title: "")
     popUp = popUpButton
@@ -26,6 +31,7 @@ struct PopUpFilter {
     for item in entries {
       self.menuAddItem(title: item.title, itemAction: item.action)
     }
+    
   }
   
   /// Add an item to the menu with the associated action
@@ -37,6 +43,7 @@ struct PopUpFilter {
       return
     }
     let menuItem = NSMenuItem(title: itemTitle, action: itemAction, keyEquivalent: "")
+    menuItem.isEnabled = false
     filterMenu.addItem(menuItem)
   }
   
@@ -49,7 +56,7 @@ struct PopUpFilter {
       // is it now Hidden ? If so, deselect and find next visible if any
       if currentSelected.isHidden {
         NotificationCenter.default.post(name: Notification.Name.PopUpWillChange, object: nil)
-        let currentIndex = (popUp?.itemArray.index(of: currentSelected))!
+        let currentIndex = (popUp?.itemArray.firstIndex(of: currentSelected))!
         popUp?.select(nil)
         selectNextVisible(from: currentIndex)
       }
