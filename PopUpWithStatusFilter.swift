@@ -113,6 +113,14 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
   {
     var textField = NSTextField(frame: NSRect(x: 0.0, y: 0.0, width: 80.0, height: 24.0))
     let alert = NSAlert()
+    let currentItemText = self.selectedItem?.attributedTitle?.string
+    if let defaultItem = currentItemText?.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false).last ?? nil
+    {
+      var defaultText = String(defaultItem.replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: ""))
+      defaultText = defaultText.trimmingCharacters(in: .whitespaces)
+      textField.stringValue = defaultText
+      textField.sizeToFit()
+    }
     alert.window.title = "Filter by Name"
     alert.messageText = "Enter string to filter list (case insensitive)"
 //    alert.informativeText = "Enter string to match"

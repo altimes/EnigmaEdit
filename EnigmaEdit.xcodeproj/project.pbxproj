@@ -56,7 +56,9 @@
 		B75540331F0DCB7400349A4F /* SwitchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75540321F0DCB7400349A4F /* SwitchControl.swift */; };
 		B77B4AC41E30222100037E01 /* RecordingManagementVCExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B4AC31E30222100037E01 /* RecordingManagementVCExtn.swift */; };
 		B782D36C1F52AC4C00737E70 /* FilmStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B782D36B1F52AC4B00737E70 /* FilmStrip.swift */; };
+		B78D828E23DFA793008CF423 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78D828D23DFA793008CF423 /* Utility.swift */; };
 		B793701C1E53BE9A00CF9B6E /* EServiceRefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793701B1E53BE9A00CF9B6E /* EServiceRefViewController.swift */; };
+		B7BC20B72432CE400026A473 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC20B62432CE400026A473 /* Cache.swift */; };
 		B7C5BF921EB5F64300604FA1 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5BF911EB5F64300604FA1 /* TimeLineView.swift */; };
 		B7D4ECE81F2D606A00B9367B /* keyStrokeCatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4ECE71F2D606A00B9367B /* keyStrokeCatch.swift */; };
 		B7E6F6DE1E00AC2200F0ADA6 /* EITEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E6F6DD1E00AC2200F0ADA6 /* EITEditController.swift */; };
@@ -115,7 +117,9 @@
 		B75540321F0DCB7400349A4F /* SwitchControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchControl.swift; sourceTree = "<group>"; };
 		B77B4AC31E30222100037E01 /* RecordingManagementVCExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingManagementVCExtn.swift; sourceTree = "<group>"; };
 		B782D36B1F52AC4B00737E70 /* FilmStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmStrip.swift; sourceTree = "<group>"; };
+		B78D828D23DFA793008CF423 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B793701B1E53BE9A00CF9B6E /* EServiceRefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EServiceRefViewController.swift; path = EnigmaEdit/EServiceRefViewController.swift; sourceTree = "<group>"; };
+		B7BC20B62432CE400026A473 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		B7C5BF911EB5F64300604FA1 /* TimeLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeLineView.swift; path = EnigmaEdit/TimeLineView.swift; sourceTree = "<group>"; };
 		B7D4ECE71F2D606A00B9367B /* keyStrokeCatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyStrokeCatch.swift; sourceTree = "<group>"; };
 		B7E6F6DD1E00AC2200F0ADA6 /* EITEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EITEditController.swift; path = EnigmaEdit/EITEditController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		B71BB5D91DFA1C820023F4BB = {
 			isa = PBXGroup;
 			children = (
+				B7BC20B62432CE400026A473 /* Cache.swift */,
+				B78D828D23DFA793008CF423 /* Utility.swift */,
 				B72D2F9E211D36C100599CFB /* PopUpFilter.swift */,
 				B72D2FA0211D376100599CFB /* PopUpWithContextFilter.swift */,
 				B72D2FA2211D39A600599CFB /* PopUpWithStatusFilter.swift */,
@@ -270,7 +276,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Alan Franklin";
 				TargetAttributes = {
 					B71BB5E11DFA1C820023F4BB = {
@@ -325,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71BB6121DFA1DCF0023F4BB /* FindFilesOperation.swift in Sources */,
+				B7BC20B72432CE400026A473 /* Cache.swift in Sources */,
 				B75540331F0DCB7400349A4F /* SwitchControl.swift in Sources */,
 				B71BB6191DFA1DCF0023F4BB /* ViewController.swift in Sources */,
 				B72D2FA3211D39A600599CFB /* PopUpWithStatusFilter.swift in Sources */,
@@ -360,6 +367,7 @@
 				B71BB6001DFA1D730023F4BB /* CutsData.swift in Sources */,
 				B71BB5FE1DFA1D730023F4BB /* Constants.swift in Sources */,
 				B71BB6151DFA1DCF0023F4BB /* pvrPreferences.swift in Sources */,
+				B78D828E23DFA793008CF423 /* Utility.swift in Sources */,
 				B7E6F6DE1E00AC2200F0ADA6 /* EITEditController.swift in Sources */,
 				B71BB6131DFA1DCF0023F4BB /* MetaData.swift in Sources */,
 				B71BB6211DFA1E0D0023F4BB /* CutsEditorMenu.swift in Sources */,
@@ -501,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = EnigmaEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -515,6 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = EnigmaEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
