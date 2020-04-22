@@ -8,13 +8,21 @@
 
 import Foundation
 
-// from swiftbysundell.com
+// based on cache demo code in swiftbysundell.com
 final class Cache<Key: Hashable, Value> {
   private let wrapped = NSCache<WrappedKey, Entry>()
+  private var keyTable = [WrappedKey]()
   
   func insert(_ value: Value, forKey key: Key) {
     let entry = Entry(value: value)
+    let thisKey = WrappedKey(key)
     wrapped.setObject(entry, forKey: WrappedKey(key))
+    keyTable.append(thisKey)
+  }
+  
+  func update(_ value: Value, forKey key: Key) {
+    removeValue(forKey: key)
+    insert(value, forKey: key)
   }
   
   func value(forKey key: Key) -> Value? {
@@ -24,12 +32,30 @@ final class Cache<Key: Hashable, Value> {
   
   func removeValue(forKey key: Key)
   {
+    print(#function+" Cache removing key: \(key)")
+    let thisKey = WrappedKey(key)
     wrapped.removeObject(forKey: WrappedKey(key))
+    keyTable.removeAll(where: {$0 == thisKey})
+  }
+  
+  func removeAll() {
+    wrapped.removeAllObjects()
+    keyTable.removeAll()
   }
   
   var countLimit : Int
   {
     get { return wrapped.countLimit }
+  }
+  
+  var keys: [Key] {
+    get {
+      var keys = [Key]()
+      for keyItem in keyTable {
+        keys.append(keyItem.key)
+      }
+      return keys
+    }
   }
 }
 

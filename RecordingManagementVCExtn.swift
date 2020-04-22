@@ -99,9 +99,19 @@ extension ViewController
   {
     let mountPath = generalPrefs.systemConfig.pvrSettings[pvrIndex].cutLocalMountRoot.components(separatedBy: "/")
     let pathElements = selectedDirectory.components(separatedBy: "/")
-    let rootElements = pathElements[0 ... mountPath.count]
+    let rootElements = pathElements[0 ... mountPath.count-1]
     let rootPath = rootElements.joined(separator: "/")
-    let trashDirectory = rootPath + "/" + trashDirectoryName
+    var trashDirectory = ""
+    for trashdir in FindFilesOperation.trashes
+    {
+      trashDirectory = rootPath + "/" + trashdir
+      print("Trash directory is \(trashDirectory) for root of \(rootPath) with Current directory of \(currentDirectory)")
+      let fileManager = FileManager.default
+      if (fileManager.fileExists(atPath: trashDirectory)) {
+        print("woo hoo found it!")
+        break
+      }
+    }
     return trashDirectory
   }
 
@@ -118,7 +128,9 @@ extension ViewController
     let pathElements = selectedDirectory.components(separatedBy: "/")
     let rootElements = pathElements[0 ..< mountPath.count]
     let rootPath = rootElements.joined(separator: "/")
-    let trashDirectory = rootPath + "/" + trashDirectoryName
+//    let trashDirectory = rootPath + "/" + trashDirectoryName
+    let trashDirectory = generateRemotePVRTrashDirectoryFor(currentDirectory: selectedDirectory)
+
     // Check existence of Trash directory
     if FileManager().fileExists(atPath: trashDirectory) {
       let fromPaths = recording.movieFiles
@@ -129,6 +141,7 @@ extension ViewController
       //      print (toPaths)
       for index in 0..<fromPaths.count {
         do {
+          print("Moving: \(fromPaths[index]) to \(toPaths[index])")
           try FileManager().moveItem(atPath: fromPaths[index], toPath: toPaths[index])
         }
         catch _ {  // delete failed for item

@@ -359,9 +359,13 @@ class TimeLineControl: NSControl
   
   func setCursorArrow() {
     if (debug) { print(#function + " stack depth =\(cursorStackDepth)") }
-    while NSCursor.current != NSCursor.arrow {
+    var cursorNotChangedToArrowAndNotTopOfStack = NSCursor.current != NSCursor.arrow
+    while cursorNotChangedToArrowAndNotTopOfStack {
+      let previousCursor = NSCursor.current
       NSCursor.pop()
-      if (debug) { print("poping cursors....") }
+      let topOfStackFound = NSCursor.current == previousCursor
+      cursorNotChangedToArrowAndNotTopOfStack = !topOfStackFound && NSCursor.current != NSCursor.arrow
+      if (true) { print("poping cursors....") }
       cursorStackDepth -= 1
     }
   }
