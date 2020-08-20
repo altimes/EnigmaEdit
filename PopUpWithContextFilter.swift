@@ -18,6 +18,7 @@ class PopUpWithContextFilter: NSPopUpButton {
   }
   
   var filter: PopUpFilter?
+  weak var parentViewController: ViewController?
   
   override init(frame frameRect: NSRect) {
     super.init(frame: frameRect)

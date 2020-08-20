@@ -87,6 +87,7 @@ extension ViewController
     
     if boundaryAdHunter == nil {
       var step: Double
+      initialStep = abs(self.skips.rhs[2].value) * 0.75
       step = (direction == .forward) ? initialStep : -initialStep
       boundaryAdHunter = BoundaryHunter(firstJump: step, firstButton: button, player: self.monitorView.player!, seekCompletionFlag: &seekCompleted, completionHander: seekCompletedOK, seekHandler: self.seekHandler)
       // inject prefs

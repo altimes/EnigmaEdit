@@ -12,6 +12,7 @@ import Foundation
 final class Cache<Key: Hashable, Value> {
   private let wrapped = NSCache<WrappedKey, Entry>()
   private var keyTable = [WrappedKey]()
+  private var debug = false
   
   func insert(_ value: Value, forKey key: Key) {
     let entry = Entry(value: value)
@@ -32,7 +33,7 @@ final class Cache<Key: Hashable, Value> {
   
   func removeValue(forKey key: Key)
   {
-    print(#function+" Cache removing key: \(key)")
+    if (debug) { print(#function+" Cache removing key: \(key)")}
     let thisKey = WrappedKey(key)
     wrapped.removeObject(forKey: WrappedKey(key))
     keyTable.removeAll(where: {$0 == thisKey})

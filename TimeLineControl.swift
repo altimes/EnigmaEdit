@@ -365,7 +365,7 @@ class TimeLineControl: NSControl
       NSCursor.pop()
       let topOfStackFound = NSCursor.current == previousCursor
       cursorNotChangedToArrowAndNotTopOfStack = !topOfStackFound && NSCursor.current != NSCursor.arrow
-      if (true) { print("poping cursors....") }
+      if (debug) { print("poping cursors....") }
       cursorStackDepth -= 1
     }
   }

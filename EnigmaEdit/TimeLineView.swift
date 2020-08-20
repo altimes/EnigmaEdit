@@ -76,7 +76,7 @@ class TimeLineView: TimeLineControl {
     drawBookMarks(inContext: context)
     drawCurrentPosition(inContext: context)
     self.normalizedXPos = currentPosition[0]
-    //      Swift.print("Called draw for Timeline")
+//          Swift.print("Called draw for Timeline")
   }
   
   override init(frame frameRect: NSRect) {
@@ -135,55 +135,9 @@ class TimeLineView: TimeLineControl {
     return labelText
   }
   
-//  // create a table that is guaranteed marks at 1.0 AND starts with an IN mark
-//  func createFullNormalizedInOutTable(inPosition:[Double], outPosition:[Double]) -> [Double]
-//  {
-//    var inOutTable = [Double]()
-//    // edge cases
-//    // single IN mark
-//    // single OUT mark
-//    if (inPositions.count == 1 && outPositions.count == 0)
-//    {
-//      inOutTable = inPositions
-//      inOutTable.append(1.0)
-//    }
-//    else if (inPositions.count == 0 && outPositions.count == 1)
-//    {
-//      inOutTable.append(0.0)
-//      inOutTable.append(contentsOf: outPositions)
-//    }
-//    else {
-//      // now determine if we start with IN or OUT
-//      if (inPositions[0] < outPositions[0])
-//      {
-//        outPositions.insert(0.0, at: 0)
-//      }
-//      else { // lowest is OUT, so fabricate and IN at 0.0
-//        inPositions.insert(0.0, at: 0)
-//      }
-//      // now interleave IN/OUT pairs watching for inconsistent marks
-//      // if sequential OUTs with intervening IN, take earliest,
-//      // if duplicate INs without intervening OUT take latest
-//      var inIndex = 0
-//      var outIndex = 0
-//      while (inIndex < inPositions.count  || outIndex < outPositions.count)
-//      {
-//        if (inPositions[inIndex] < outPositions[outIndex])  {
-//          inOutTable.append(outPositions[outIndex])
-//          outIndex += 1
-//        }
-//        else {
-//          inOutTable.append(inPositions[inIndex])
-//          inIndex += 1
-//        }
-//      }
-//    }
-//    return inOutTable
-//  }
-  
-  func drawInOutMarks(inContext context: CGContext?)
+    func drawInOutMarks(inContext context: CGContext?)
   {
-    // cutBoxPositions first value is ALWAY an OUT value
+    guard (cutBoxPositions.count != 0) else { return }
     if cutBoxPositions.count % 2 != 0 {
       cutBoxPositions.append(1.0)
     }
@@ -278,7 +232,8 @@ class TimeLineView: TimeLineControl {
   /// Draw a shaded box of the section to remove
   func drawCutBox(normalizedStart: Double, normalizedEnd:Double, inContext context:CGContext?)
   {
-    //    Swift.print("Drawing Cutbox from \(normalizedStart) to \(normalizedEnd)")
+    guard (fabs(normalizedEnd - normalizedStart) > 0.001 ) else { return }
+//    Swift.print("Drawing Cutbox from \(normalizedStart) to \(normalizedEnd)")
     context?.saveGState()
     context?.setFillColor(cutoutColour.cgColor)
     //    let end = self.frame.width

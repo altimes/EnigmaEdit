@@ -16,7 +16,8 @@ import AVKit
 class FilmStrip: NSStackView
 {
   
-  var filmstripFrameGap: Double = 0.2         // seconds
+//  var filmstripFrameGap: Double = 0.2         // seconds
+  var filmstripFrameGap: Double = 30.0         // seconds
   @IBInspectable dynamic var frames: Int = 7
     {
     didSet {
@@ -72,23 +73,28 @@ class FilmStrip: NSStackView
   private func changeThumbnailCountTo(_ frameCount: Int)
   {
     var thumbnails = [NSImageView]()
+    let scissorImage = getDefaultFilmStripImageForView(imageBounds)
+    scissorImage.lockFocus()
+    let imageRect = NSRect(origin: .zero, size: scissorImage.size)
+    scissorImage.draw(in: imageRect, from: imageRect, operation: .clear, fraction: 0.2)
+    scissorImage.unlockFocus()
     for _ in 1...frameCount
     {
-      let filmCell = NSImageView(image: getDefaultFilmStripImageForView(imageBounds))
+      let filmCell = NSImageView(image: scissorImage)
       //      filmCell.backgroundColor = NSColor.yellow
+//      filmCell.alphaValue = 0.2
       thumbnails.append(filmCell)
     }
     //    self.addView(thumbnails[0], in: NSStackViewGravity.center)
     self.setViews(thumbnails, in: .center)
-    
   }
   
   /// replaces the transparent overlay label that shows the time delta of the thumbnail
   /// called when user changes filmstrip gap in preferences
   
-  func updateTimeTextLabels()
+  func updateTimeTextLabels(timeStep: Double)
   {
-    let secondsApart = filmstripFrameGap  // from user prefs
+    let secondsApart = timeStep  // from user prefs
     let frames = self.arrangedSubviews.count
     let nominalCentreFrametime = Double(frames/2) * secondsApart
     let startDelta = Double(frames / 2) * secondsApart
@@ -220,12 +226,14 @@ class FilmStrip: NSStackView
         layer.cornerRadius = 0.1 * resizedImage.size.width
         layer.masksToBounds = true
         let imageLayer = CALayer()
+//        imageLayer.opacity = 0.5
         imageLayer.contents = resizedImage
         imageLayer.frame = imageFrame
         layer.addSublayer(imageLayer)
         
         let deltaString = filmStripTextFromDeltaSecs(frameDelta)
         let textLayer = timeDeltaCATextLayer(deltaValue: deltaString, in: imageLayer.frame)
+        textLayer.opacity = 0.5
         
         imageLayer.addSublayer(textLayer)
       }
@@ -339,8 +347,8 @@ class FilmStrip: NSStackView
   /// Also need to access the "spacing" of the frames
   func assetImageCompletionHandler (time:CMTime, image: CGImage?, actualTime:CMTime, result:AVAssetImageGenerator.Result, error: Error?)
   {
-    //    let resultAsString = result == AVAssetImageGeneratorResult.succeeded ? "Succeeded" : (result == AVAssetImageGeneratorResult.failed) ? "Failed": "Cancelled"
-    //    print("result: \(resultAsString) requested at time \(time.seconds)")
+//    let resultAsString = result == AVAssetImageGenerator.Result.succeeded ? "Succeeded" : (result == AVAssetImageGenerator.Result.failed) ? "Failed": "Cancelled"
+//        print("result: \(resultAsString) requested at time \(time.seconds)")
     if (result == AVAssetImageGenerator.Result.failed && debug)
     {
       Swift.print("error: \(String(describing: error))")

@@ -65,14 +65,16 @@ extension ViewController
     for index in 0..<fromPaths.count {
       let fileURL = URL(fileURLWithPath: fromPaths[index])
       do {
+        print("Moving: \(fromPaths[index]) to .Trash")
         try FileManager().trashItem(at: fileURL, resultingItemURL: &resultURL )
         doneURL[index] = resultURL!
       }
-      catch _ {
+      catch let error as NSError {
+        Swift.print(error.localizedDescription)
         // try to put back already trashed element of recording
         result.status = false
         result.message = "Move to Trash failed for \(recording.movieShortName!)"
-        result.message = "\nMove to Trash Failed for component \(fromPaths[index])"
+        result.message += "\nMove to Trash Failed for component \(fromPaths[index])"
         for doneIndex in 0..<index
         {
           let fromURL = doneURL[doneIndex] as URL
@@ -124,10 +126,10 @@ extension ViewController
     // FIXME: fails when non-root directory is base sourceMoviePath
     var result = resultAndMessage(true,"")
     // look for .Trash below firstdirectory below mount point
-    let mountPath = generalPrefs.systemConfig.pvrSettings[pvrIndex].cutLocalMountRoot.components(separatedBy: "/")
-    let pathElements = selectedDirectory.components(separatedBy: "/")
-    let rootElements = pathElements[0 ..< mountPath.count]
-    let rootPath = rootElements.joined(separator: "/")
+//    let mountPath = generalPrefs.systemConfig.pvrSettings[pvrIndex].cutLocalMountRoot.components(separatedBy: "/")
+//    let pathElements = selectedDirectory.components(separatedBy: "/")
+//    let rootElements = pathElements[0 ..< mountPath.count]
+//    let rootPath = rootElements.joined(separator: "/")
 //    let trashDirectory = rootPath + "/" + trashDirectoryName
     let trashDirectory = generateRemotePVRTrashDirectoryFor(currentDirectory: selectedDirectory)
 
@@ -146,7 +148,8 @@ extension ViewController
         }
         catch _ {  // delete failed for item
           result.message = "Move to Trash Failed for \(recording.movieShortName!)"
-          result.message = "\nMove to Trash Failed for \(fromPaths[index])->\(toPaths[index])"
+          result.message
+            += "\nMove to Trash Failed for \(fromPaths[index])->\(toPaths[index])"
           result.status = false
           // TODO: attempt recovery from partial failed trashing
         }
@@ -172,14 +175,18 @@ extension ViewController
       docController.removeDocument(doc)
     }
     
-    if (isRemote) {
-      result = remoteMoveToTrash(recording: movie)
-    }
-    else {
-      result = localMoveToTrash(recording: movie)
-    }
+    result = remoteMoveToTrash(recording: movie)
+//    if (isRemote) {
+//      result = remoteMoveToTrash(recording: movie)
+//    }
+//    else {
+//      result = localMoveToTrash(recording: movie)
+//    }
     
     if (result.status) {
+      let deletedMessage = "Deleted " + movie.movieShortName!
+      addToCutToolTip(message: deletedMessage)
+      
       // remove from filelist and rebuild gui elements selecting either next (or previous if no next)
       // FIXME: what to do when removing the only file
       var nextIndexToSelect = filelistIndex
@@ -201,6 +208,7 @@ extension ViewController
         setPrevNextButtonState(filelistIndex)
       }
     }
+
     return result
   }
   
@@ -261,4 +269,13 @@ extension ViewController
     }
     return defaultCount
   }
+  
+  /// For selected movie, trigger a reload of cached data (typically needed due to external change that cannot be observed)
+  @IBAction func reloadCache(_ sender: NSMenuItem)
+  {
+      disconnectCurrentMovieFromGUI()
+      changeFile(currentFile.indexOfSelectedItem)
+      setDropDownColourForIndex(currentFile.indexOfSelectedItem)
+  }
+
 }
