@@ -13,7 +13,8 @@ import Cocoa
 class PopUpWithStatusFilter: PopUpWithContextFilter {
   
   struct eitSummary: Equatable {
-    let channel: String
+//    let channel: String
+    let programTitle: String
     let episodeTitle: String
   }
 
@@ -44,6 +45,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
         ("Named",#selector(PopUpWithStatusFilter.showNamed)),
         ("Duplicated",#selector(PopUpWithStatusFilter.showDuplicated)),
         ("Matches",#selector(PopUpWithStatusFilter.showMatchingCurrent)),
+        ("Next Duplicate",#selector(PopUpWithStatusFilter.showDuplicatedMatch)),
         ("Titled",#selector(PopUpWithStatusFilter.showTitled)),
         ("Reload",#selector(PopUpWithStatusFilter.reloadCache))
     ])
@@ -109,9 +111,11 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     let matchTo = target.uppercased()
     let itemString = self.itemArray[index].attributedTitle!.string.uppercased()
     if itemString.contains(matchTo) || target == "" {
-      // extract channel from attributed title
-      if itemString.contains("-") {
-        let channel = itemString.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false)[1]
+      // extract details from attributed title
+      let nameFields = itemString.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false)
+      if nameFields.count >= 3 {
+//        let channel = String(nameFields[1]).trimmingCharacters(in: .whitespaces)
+        let programName = String(nameFields[2]).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX.uppercased(), with: "")
         // extract episode title from eit
         // load the eit file
         if let baseNameURL = parentViewController?.filelist[index].replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
@@ -123,7 +127,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
             if let eitInfo=EITInfo(data: EITData) {
               eit = eitInfo
             }
-            return( eitSummary(channel: String(channel), episodeTitle: eit.episodeText) )
+            return( eitSummary(/* channel: channel, */ programTitle: programName, episodeTitle: eit.episodeText) )
           }
         }
       }
@@ -285,6 +289,13 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     setVisibilty(isHidden: {index in  return !isEntryInDuplicates(index, summary: summaryDictionary[index] ?? nil, duplicates: duplicated)})
   }
   
+    /// filter by all name contents and is same episode title
+    @objc private func showDuplicatedMatch()
+    {
+        showDuplicated()
+        showMatchingCurrent()
+    }
+    
   /// Check if given index entry is in the duplicates table
   private func isEntryInDuplicates(_ index: Int, summary: eitSummary?, duplicates: [eitSummary]) -> Bool {
     guard (summary != nil) else {return false}

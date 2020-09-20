@@ -34,7 +34,7 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "65D11859-62B1-4CBA-BADE-91322CB0279C - 77495fb597e122ef"
+                  uuid = "65D11859-62B1-4CBA-BADE-91322CB0279C - dc30b3862256807c"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -50,7 +50,7 @@
                   offsetFromSymbolStart = "38">
                </Location>
                <Location
-                  uuid = "65D11859-62B1-4CBA-BADE-91322CB0279C - 1d5185e3b6928c3"
+                  uuid = "65D11859-62B1-4CBA-BADE-91322CB0279C - aaacf46d8ede8a50"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -64,108 +64,6 @@
                   startingLineNumber = "49"
                   endingLineNumber = "49"
                   offsetFromSymbolStart = "10">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7769ECE3-4B9C-49F7-A297-7A03D7FAF4D5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "589697182.521103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2279"
-            endingLineNumber = "2279"
-            landmarkName = "observeValue(forKeyPath:of:change:context:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7769ECE3-4B9C-49F7-A297-7A03D7FAF4D5 - 2c0751ef045c9d5a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.ViewController.observeValue (forKeyPath : Swift.Optional&lt;Swift.String&gt;, of : Swift.Optional&lt;Any&gt;, change : Swift.Optional&lt;Swift.Dictionary&lt;__C.NSKeyValueChangeKey, Any&gt;&gt;, context : Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;) -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/ViewController.swift"
-                  timestampString = "519611443.508708"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1846"
-                  endingLineNumber = "1846"
-                  offsetFromSymbolStart = "28132">
-               </Location>
-               <Location
-                  uuid = "7769ECE3-4B9C-49F7-A297-7A03D7FAF4D5 - 2c0751ef045c9d5a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.ViewController.observeValue (forKeyPath : Swift.Optional&lt;Swift.String&gt;, of : Swift.Optional&lt;Any&gt;, change : Swift.Optional&lt;Swift.Dictionary&lt;__C.NSKeyValueChangeKey, Any&gt;&gt;, context : Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;) -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/ViewController.swift"
-                  timestampString = "519611443.512041"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1846"
-                  endingLineNumber = "1846"
-                  offsetFromSymbolStart = "29883">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "00563CA7-B327-4D40-A1FF-FD7482BE393C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
-            timestampString = "589697182.521621"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2283"
-            endingLineNumber = "2283"
-            landmarkName = "observeValue(forKeyPath:of:change:context:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "00563CA7-B327-4D40-A1FF-FD7482BE393C - 2c0751ef045c9d5a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.ViewController.observeValue (forKeyPath : Swift.Optional&lt;Swift.String&gt;, of : Swift.Optional&lt;Any&gt;, change : Swift.Optional&lt;Swift.Dictionary&lt;__C.NSKeyValueChangeKey, Any&gt;&gt;, context : Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;) -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/ViewController.swift"
-                  timestampString = "520049472.997106"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1852"
-                  endingLineNumber = "1852"
-                  offsetFromSymbolStart = "27962">
-               </Location>
-               <Location
-                  uuid = "00563CA7-B327-4D40-A1FF-FD7482BE393C - 2c0751ef045c9d5a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.ViewController.observeValue (forKeyPath : Swift.Optional&lt;Swift.String&gt;, of : Swift.Optional&lt;Any&gt;, change : Swift.Optional&lt;Swift.Dictionary&lt;__C.NSKeyValueChangeKey, Any&gt;&gt;, context : Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;) -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/ViewController.swift"
-                  timestampString = "520049473.001252"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1852"
-                  endingLineNumber = "1852"
-                  offsetFromSymbolStart = "29685">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -187,7 +85,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "524571E0-57C6-435D-B571-D330851D36E1 - bba3ce42f312c387"
+                  uuid = "524571E0-57C6-435D-B571-D330851D36E1 - dd357513c215023a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -203,7 +101,7 @@
                   offsetFromSymbolStart = "897">
                </Location>
                <Location
-                  uuid = "524571E0-57C6-435D-B571-D330851D36E1 - bba3ce42f312c387"
+                  uuid = "524571E0-57C6-435D-B571-D330851D36E1 - dd357513c215023a"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -264,32 +162,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E7919782-39FD-4397-A594-F49F229F54E9"
+            uuid = "3FD2B9D5-AA2F-4E8E-900D-F6E5B6BF8B12"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2586"
-            endingLineNumber = "2586"
-            landmarkName = "seekInSequence(to:toleranceBefore:toleranceAfter:)"
+            startingLineNumber = "1971"
+            endingLineNumber = "1971"
+            landmarkName = "actionsSetEnabled(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "304D4734-52B8-473C-A56B-5F472090D026"
+            uuid = "F6F9A994-FC17-4CC0-90C9-3BE7195C5FE3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2617"
-            endingLineNumber = "2617"
-            landmarkName = "seekCompletedOK(_:)"
+            startingLineNumber = "1976"
+            endingLineNumber = "1976"
+            landmarkName = "actionsSetEnabled(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E24D8AB-7422-40D1-ACFE-7E19F27AD9FC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1980"
+            endingLineNumber = "1980"
+            landmarkName = "actionsSetEnabled(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6652694-BAA4-4736-A9FA-9876912C1D7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2874"
+            endingLineNumber = "2874"
+            landmarkName = "addPlayerNeverComesReadyTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AFA81AC-5243-4DA3-9FB2-9AAA9271F330"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2475"
+            endingLineNumber = "2475"
+            landmarkName = "setupAVPlayerFor(_:startTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A03388B6-67D5-4394-8879-B1EDAFF55D65"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "750"
+            endingLineNumber = "750"
+            landmarkName = "setPrevNextButtonState(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
