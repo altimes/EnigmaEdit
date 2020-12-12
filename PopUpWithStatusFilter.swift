@@ -127,7 +127,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
             if let eitInfo=EITInfo(data: EITData) {
               eit = eitInfo
             }
-            return( eitSummary(/* channel: channel, */ programTitle: programName, episodeTitle: eit.episodeText) )
+            return( eitSummary(/* channel: channel,  */ programTitle: programName, episodeTitle: eit.episodeText) )
           }
         }
       }
@@ -223,6 +223,8 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     var duplicated = [eitSummary]()
     
     let programSummary = summaryOf(self.indexOfSelectedItem, target: programName!)
+    
+    guard programSummary != nil else { return }
     
     // Build three tables.  First a matchable summary of all movies that have
     // sufficient data to summarise.  Second a array of all those matched to the
