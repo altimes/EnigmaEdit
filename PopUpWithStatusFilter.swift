@@ -101,7 +101,22 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     return !display
   }
   
-
+  /// remove (nnn) tail from string - (nnn) marks full time/date/station duplication
+  private func removeCountField(from: String) -> String
+  {
+    //FIXME: should test for generic (n) - but never seen more that (1)
+    if (from.contains("(1)"))
+    {
+      if let regex = try? NSRegularExpression(pattern: " \\([1-9]*\\)$", options: .caseInsensitive) {
+        let stringRange = NSRange.init(location: 0, length: from.count)
+        let modString = regex.stringByReplacingMatches(in: from, options: [], range: stringRange, withTemplate: "")
+        print("made " + modString + " from " + from)
+         return modString
+      }
+    }
+    return from
+  }
+  
   /// Create a limited summary of the recording
   
   private func summaryOf(_ index: Int, target:String = "") -> eitSummary?
@@ -109,7 +124,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     guard index >= 0 && index < self.itemArray.count else { return nil }
     // make case insensitive
     let matchTo = target.uppercased()
-    let itemString = self.itemArray[index].attributedTitle!.string.uppercased()
+    let itemString = removeCountField(from: self.itemArray[index].attributedTitle!.string.uppercased())
     if itemString.contains(matchTo) || target == "" {
       // extract details from attributed title
       let nameFields = itemString.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false)

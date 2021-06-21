@@ -367,7 +367,8 @@ class FilmStrip: NSStackView
         if let viewIndex = self.requestedTimes.firstIndex(of: time as NSValue) {
           DispatchQueue.main.async  {
             self.updateFilmstripWithImage(_image, atStripIndex: viewIndex)
-          }
+//            _ = _image.saveAsJPG(viewIndex)
+      }
         }
       }
     }
@@ -398,5 +399,22 @@ class FilmStrip: NSStackView
     // what goes here ?
     super.prepareForInterfaceBuilder()
     self.filmstripSetup()
+  }
+}
+
+// Modified after stolen from: https://stackoverflow.com/questions/48312161/how-to-save-cgimage-to-data-in-swift
+// with thanks
+extension CGImage {
+  
+  func saveAsJPG(_ imageIndex: Int) -> Bool
+  {
+    let filename = NSString(format: "/Users/alanf/Documents/%d.jpg", imageIndex )
+    if let url = CFURLCreateWithFileSystemPath(nil, filename, CFURLPathStyle.cfurlposixPathStyle, false),
+       let targetFile = CGImageDestinationCreateWithURL(url, kUTTypeJPEG, 1, nil)
+    {
+      CGImageDestinationAddImage(targetFile, self, nil)
+      return CGImageDestinationFinalize(targetFile)
+    }
+    return false
   }
 }
