@@ -32,6 +32,9 @@ final class Cache<Key: Hashable, Value> {
     return entry?.value
   }
   
+  // FIXME: will crash when cache is being populated....
+  // eg foolishly run markNCut whilst background process is setting up
+  // colouring AND populating cache
   func removeValue(forKey key: Key)
   {
     if (debug) { print(#function+" Cache removing key: \(key)")}

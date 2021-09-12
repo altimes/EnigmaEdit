@@ -88,6 +88,9 @@ struct PopUpFilter {
     }
     return success
   }
+ 
+    
+
   
   /// Select next visible item in popUp starting at "from" Index
   /// If it runs of the end of the array, try starting from the begining

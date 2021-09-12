@@ -46,12 +46,16 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
         ("Duplicated",#selector(PopUpWithStatusFilter.showDuplicated)),
         ("Matches",#selector(PopUpWithStatusFilter.showMatchingCurrent)),
         ("Next Duplicate",#selector(PopUpWithStatusFilter.showDuplicatedMatch)),
+        ("Next Different Duplicate",#selector(PopUpWithStatusFilter.showNextDifferentDuplicatedMatch)),
         ("Titled",#selector(PopUpWithStatusFilter.showTitled)),
-        ("Reload",#selector(PopUpWithStatusFilter.reloadCache))
+        ("Reload",#selector(PopUpWithStatusFilter.reloadCache)),
+        ("Delete",#selector(PopUpWithStatusFilter.deleteSelection))
     ])
     self.autoenablesItems = false
     self.isEnabled = false
   }
+  
+  private var firstDeletedIndex: Int? = nil
   
   typealias MatchStatus = (_ arrayIndex: Int)->Bool
   private func setVisibilty(isHidden hideTest: MatchStatus)
@@ -104,14 +108,21 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
   /// remove (nnn) tail from string - (nnn) marks full time/date/station duplication
   private func removeCountField(from: String) -> String
   {
-    //FIXME: should test for generic (n) - but never seen more that (1)
-    if (from.contains("(1)"))
+    // extract duplication count from name
+    if let tailString = from.components(separatedBy: "(").last
     {
-      if let regex = try? NSRegularExpression(pattern: " \\([1-9]*\\)$", options: .caseInsensitive) {
-        let stringRange = NSRange.init(location: 0, length: from.count)
-        let modString = regex.stringByReplacingMatches(in: from, options: [], range: stringRange, withTemplate: "")
-        print("made " + modString + " from " + from)
-         return modString
+      // should now be "nnnn)"
+      let numericPart = tailString.dropLast()
+      
+      // if we got a valid number, remove the appendage
+      if let _ = Int(numericPart)
+      {
+        if let regex = try? NSRegularExpression(pattern: " \\([1-9]*\\)$", options: .caseInsensitive) {
+          let stringRange = NSRange.init(location: 0, length: from.count)
+          let modString = regex.stringByReplacingMatches(in: from, options: [], range: stringRange, withTemplate: "")
+          print("made " + modString + " from " + from)
+          return modString
+        }
       }
     }
     return from
@@ -306,13 +317,78 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     setVisibilty(isHidden: {index in  return !isEntryInDuplicates(index, summary: summaryDictionary[index] ?? nil, duplicates: duplicated)})
   }
   
-    /// filter by all name contents and is same episode title
-    @objc private func showDuplicatedMatch()
-    {
-        showDuplicated()
-        showMatchingCurrent()
-    }
+  /// filter by all name contents and is same episode title
+  @objc private func showDuplicatedMatch()
+  {
+      showDuplicated()
+      showMatchingCurrent()
+  }
+ 
+  /// Select first different visible item in popUp start at "from" Index
+  /// - parameter from: index into item array
+  /// - returns: success of finding at item to select
+  private func selectFirstDifferentVisible(from current: Int) -> Bool
+  {
+    guard current >= 0 else { return false }
+    guard let list = self as NSPopUpButton? else { return false }
     
+    let currentSummary = summaryOf(current)
+    var success = false
+    for itemIndex in current ..< list.itemArray.count {
+      if list.itemArray[itemIndex].isHidden {
+        continue
+      }
+      else {
+        list.selectItem(at: itemIndex)
+        let nextSummary = summaryOf(itemIndex)
+        if (nextSummary != currentSummary)
+        {
+          NotificationCenter.default.post(name: Notification.Name.PopUpHasChanged, object: nil)
+          success = true
+          break
+        }
+      }
+    }
+    return success
+  }
+
+  /// delete current selected recording
+  @objc private func deleteSelection()
+  {
+    if let vc = parentViewController {
+      if firstDeletedIndex == nil {
+        firstDeletedIndex = vc.currentFile.indexOfSelectedItem
+      }
+      vc.deleteRecording(vc.deleteRecordingButton)
+    }
+  }
+  
+  /// filter:
+  /// set list to all duplicated retaining current selection
+  /// if possible, step forward until the selection does not match the
+  /// current highlighted selection.
+  /// The purpose is to skip forward stepping over duplicates when the duplicates
+  /// are, typically, an SD and HD recording of the same program
+  @objc private func showNextDifferentDuplicatedMatch()
+  {
+    let vc = parentViewController!
+    if let oldestDeletedIndex = firstDeletedIndex {
+      vc.currentFile.selectItem(at: oldestDeletedIndex)
+    }
+    firstDeletedIndex = nil
+    showDuplicated()
+    if (vc.nextButton.isEnabled) {
+      if !selectFirstDifferentVisible(from: vc.currentFile.indexOfSelectedItem)
+      {
+        NSSound.beep()
+      }
+    }
+    else {
+      NSSound.beep()
+    }
+    showMatchingCurrent()
+  }
+  
   /// Check if given index entry is in the duplicates table
   private func isEntryInDuplicates(_ index: Int, summary: eitSummary?, duplicates: [eitSummary]) -> Bool {
     guard (summary != nil) else {return false}

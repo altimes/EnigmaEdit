@@ -126,11 +126,6 @@ extension ViewController
     // FIXME: fails when non-root directory is base sourceMoviePath
     var result = resultAndMessage(true,"")
     // look for .Trash below firstdirectory below mount point
-//    let mountPath = generalPrefs.systemConfig.pvrSettings[pvrIndex].cutLocalMountRoot.components(separatedBy: "/")
-//    let pathElements = selectedDirectory.components(separatedBy: "/")
-//    let rootElements = pathElements[0 ..< mountPath.count]
-//    let rootPath = rootElements.joined(separator: "/")
-//    let trashDirectory = rootPath + "/" + trashDirectoryName
     let trashDirectory = generateRemotePVRTrashDirectoryFor(currentDirectory: selectedDirectory)
 
     // Check existence of Trash directory
