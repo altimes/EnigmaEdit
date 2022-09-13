@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,6 +56,8 @@
 		B75540331F0DCB7400349A4F /* SwitchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75540321F0DCB7400349A4F /* SwitchControl.swift */; };
 		B77B4AC41E30222100037E01 /* RecordingManagementVCExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B4AC31E30222100037E01 /* RecordingManagementVCExtn.swift */; };
 		B782D36C1F52AC4C00737E70 /* FilmStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B782D36B1F52AC4B00737E70 /* FilmStrip.swift */; };
+		B783947B272520FE0080840B /* DisplayEITEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783947A272520FE0080840B /* DisplayEITEditor.swift */; };
+		B783947E27268FA00080840B /* DisplayEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783947D27268FA00080840B /* DisplayEditor.swift */; };
 		B78D828E23DFA793008CF423 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78D828D23DFA793008CF423 /* Utility.swift */; };
 		B793701C1E53BE9A00CF9B6E /* EServiceRefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B793701B1E53BE9A00CF9B6E /* EServiceRefViewController.swift */; };
 		B7BC20B72432CE400026A473 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC20B62432CE400026A473 /* Cache.swift */; };
@@ -117,6 +119,8 @@
 		B75540321F0DCB7400349A4F /* SwitchControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchControl.swift; sourceTree = "<group>"; };
 		B77B4AC31E30222100037E01 /* RecordingManagementVCExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingManagementVCExtn.swift; sourceTree = "<group>"; };
 		B782D36B1F52AC4B00737E70 /* FilmStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmStrip.swift; sourceTree = "<group>"; };
+		B783947A272520FE0080840B /* DisplayEITEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEITEditor.swift; sourceTree = "<group>"; };
+		B783947D27268FA00080840B /* DisplayEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEditor.swift; sourceTree = "<group>"; };
 		B78D828D23DFA793008CF423 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B793701B1E53BE9A00CF9B6E /* EServiceRefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EServiceRefViewController.swift; path = EnigmaEdit/EServiceRefViewController.swift; sourceTree = "<group>"; };
 		B7BC20B62432CE400026A473 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				B730A49E1E4191E4000E10E7 /* scissors_icon-icons.com_50046-256.png */,
 				B730A49F1E4191E4000E10E7 /* scissors_icon-icons.com_50046-512.png */,
 				B71BB6041DFA1DCF0023F4BB /* IMG_1200.png */,
+				B783947A272520FE0080840B /* DisplayEITEditor.swift */,
+				B783947D27268FA00080840B /* DisplayEditor.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -287,7 +293,7 @@
 				};
 			};
 			buildConfigurationList = B71BB5DD1DFA1C820023F4BB /* Build configuration list for PBXProject "EnigmaEdit" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -332,6 +338,7 @@
 			files = (
 				B71BB6121DFA1DCF0023F4BB /* FindFilesOperation.swift in Sources */,
 				B7BC20B72432CE400026A473 /* Cache.swift in Sources */,
+				B783947B272520FE0080840B /* DisplayEITEditor.swift in Sources */,
 				B75540331F0DCB7400349A4F /* SwitchControl.swift in Sources */,
 				B71BB6191DFA1DCF0023F4BB /* ViewController.swift in Sources */,
 				B72D2FA3211D39A600599CFB /* PopUpWithStatusFilter.swift in Sources */,
@@ -371,6 +378,7 @@
 				B7E6F6DE1E00AC2200F0ADA6 /* EITEditController.swift in Sources */,
 				B71BB6131DFA1DCF0023F4BB /* MetaData.swift in Sources */,
 				B71BB6211DFA1E0D0023F4BB /* CutsEditorMenu.swift in Sources */,
+				B783947E27268FA00080840B /* DisplayEditor.swift in Sources */,
 				B71BB6021DFA1D730023F4BB /* CutsPreferencesController.swift in Sources */,
 				B7529F561E074BC400C61A49 /* ExtendedEventDescriptorController.swift in Sources */,
 				B77B4AC41E30222100037E01 /* RecordingManagementVCExtn.swift in Sources */,
@@ -443,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -499,10 +507,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Release;
@@ -513,10 +522,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20200924;
+				CURRENT_PROJECT_VERSION = 20220509;
 				INFOPLIST_FILE = EnigmaEdit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dyndns.franklinoffner.EnigmaEdit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENVIRONMENT = 3;
@@ -530,10 +542,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 20200924;
+				CURRENT_PROJECT_VERSION = 20220509;
 				INFOPLIST_FILE = EnigmaEdit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dyndns.franklinoffner.EnigmaEdit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENVIRONMENT = 3;

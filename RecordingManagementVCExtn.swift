@@ -268,9 +268,12 @@ extension ViewController
   /// For selected movie, trigger a reload of cached data (typically needed due to external change that cannot be observed)
   @IBAction func reloadCache(_ sender: NSMenuItem)
   {
-      disconnectCurrentMovieFromGUI()
-      changeFile(currentFile.indexOfSelectedItem)
-      setDropDownColourForIndex(currentFile.indexOfSelectedItem)
+    reloadCache()
   }
 
+  func reloadCache() {
+    disconnectCurrentMovieFromGUI()
+    changeFile(currentFile.indexOfSelectedItem)
+    setDropDownColourForIndex(currentFile.indexOfSelectedItem)
+  }
 }

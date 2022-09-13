@@ -37,19 +37,21 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     self.filter = PopUpFilter(popUpButton: self as NSPopUpButton)
     self.filter?.createMenu(entries:
       [
-        ("Raw",#selector(PopUpWithStatusFilter.showRaw)),
-        ("Partial",#selector(PopUpWithStatusFilter.showPartial)),
-        ("Ready",#selector(PopUpWithStatusFilter.showReady)),
-        ("Cut",#selector(PopUpWithStatusFilter.showCut)),
-        ("All",#selector(PopUpWithStatusFilter.showAll)),
-        ("Named",#selector(PopUpWithStatusFilter.showNamed)),
-        ("Duplicated",#selector(PopUpWithStatusFilter.showDuplicated)),
-        ("Matches",#selector(PopUpWithStatusFilter.showMatchingCurrent)),
-        ("Next Duplicate",#selector(PopUpWithStatusFilter.showDuplicatedMatch)),
-        ("Next Different Duplicate",#selector(PopUpWithStatusFilter.showNextDifferentDuplicatedMatch)),
-        ("Titled",#selector(PopUpWithStatusFilter.showTitled)),
-        ("Reload",#selector(PopUpWithStatusFilter.reloadCache)),
-        ("Delete",#selector(PopUpWithStatusFilter.deleteSelection))
+        ("Raw",#selector(PopUpWithStatusFilter.showRaw),"R",NSEvent.ModifierFlags.option),
+        ("Partial",#selector(PopUpWithStatusFilter.showPartial),"P",NSEvent.ModifierFlags.option),
+        ("Ready",#selector(PopUpWithStatusFilter.showReady),"r",[NSEvent.ModifierFlags.control,NSEvent.ModifierFlags.option]),
+        ("Cut",#selector(PopUpWithStatusFilter.showCut),"c",NSEvent.ModifierFlags.option),
+        ("All",#selector(PopUpWithStatusFilter.showAll),"a",NSEvent.ModifierFlags.option),
+        ("Named",#selector(PopUpWithStatusFilter.showNamed),"n",NSEvent.ModifierFlags.option),
+        ("Duplicated",#selector(PopUpWithStatusFilter.showDuplicated),"D", NSEvent.ModifierFlags.option),
+        ("Matches",#selector(PopUpWithStatusFilter.showMatchingCurrent),"m", NSEvent.ModifierFlags.option),
+        ("Next Duplicate",#selector(PopUpWithStatusFilter.showDuplicatedMatch),"N",NSEvent.ModifierFlags.option),
+        ("Next Different Duplicate",#selector(PopUpWithStatusFilter.showNextDifferentDuplicatedMatch),"D",[NSEvent.ModifierFlags.command]),
+        ("All Duplicates",#selector(PopUpWithStatusFilter.showAllDuplicated),"A",NSEvent.ModifierFlags.option),
+        ("Titled",#selector(PopUpWithStatusFilter.showTitled),"t",NSEvent.ModifierFlags.option),
+        ("Reload",#selector(PopUpWithStatusFilter.reloadCache),"r",NSEvent.ModifierFlags.option),
+        ("Delete",#selector(PopUpWithStatusFilter.deleteSelection),"x",NSEvent.ModifierFlags.option),
+        ("Delete and Next Duplicate", #selector(PopUpWithStatusFilter.deleteSelectionAndFindNextDuplicate),"X",NSEvent.ModifierFlags.option)
     ])
     self.autoenablesItems = false
     self.isEnabled = false
@@ -153,7 +155,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
             if let eitInfo=EITInfo(data: EITData) {
               eit = eitInfo
             }
-            return( eitSummary(/* channel: channel,  */ programTitle: programName, episodeTitle: eit.episodeText) )
+            return( eitSummary(/* channel: channel,  */ programTitle: programName, episodeTitle: eit.episodeText.lowercased()) )
           }
         }
       }
@@ -211,12 +213,25 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
   /// filter by name contents
   @objc private func showNamed()
   {
+    var subItem: String?
     let textField = NSTextField(frame: NSRect(x: 0.0, y: 0.0, width: 80.0, height: 24.0))
     let alert = NSAlert()
     alert.window.title = "Filter by Name"
     alert.messageText = "Enter string to filter list (case insensitive)"
     let currentItemText = self.selectedItem?.attributedTitle?.string
-    if let defaultItem = currentItemText?.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false).last ?? nil
+    if let items = currentItemText?.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false) {
+      if items.count == 3 {
+        subItem = String(items.last!)
+      }
+      else if items.count == 4 {
+        subItem = String(items[items.count-2]) // second last
+      }
+      else { // not enough item to guess
+        subItem = currentItemText
+      }
+    }
+//    if let defaultItem = currentItemText?.split(separator: "-", maxSplits: 2, omittingEmptySubsequences: false).last ?? nil
+    if let defaultItem = subItem
     {
       var defaultText = String(defaultItem.replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: ""))
       defaultText = defaultText.trimmingCharacters(in: .whitespaces)
@@ -269,6 +284,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
       }
     }
     setVisibilty(isHidden: {index in  return !doesEntryMatch(index, summary: summaryDictionary[index] ?? nil, target: programSummary!)})
+    filter!.selectFirst()
 
   }
   
@@ -293,7 +309,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
 //    alert.alertStyle = NSAlert.Style.informational
 //    alert.accessoryView = textField
 //    alert.runModal()
-
+/*
     var summaries = [eitSummary]()
     var summaryDictionary = [Int:eitSummary]()
     var duplicated = [eitSummary]()
@@ -314,9 +330,87 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
         }
       }
     }
+ */
+    let (summaryDictionary,duplicated) = getDuplicatedSummariesFor(textField.stringValue)
     setVisibilty(isHidden: {index in  return !isEntryInDuplicates(index, summary: summaryDictionary[index] ?? nil, duplicates: duplicated)})
   }
   
+  /// Utility to assist finding duplicate recordings.  It creates a summary of the EIT data for each recording.
+  /// It then checks if a matching summary exists.  If it does, then it add the current summary to the
+  /// duplicated array.  It always add the summary to the summary array and creates a dictionary
+  /// entry with the index of the recording as the key.  The caller can use the duplicated table entry to get the
+  /// keys (indices of the recording that match)
+  /// - Parameter name: the name of the program to look for, which is the recording file name with all
+  /// the date, station id, etc removed.  Eg "The Orville"
+  /// - Returns: tuple of the summary dictionary and the array of duplicated recordings.
+  private func getDuplicatedSummariesFor(_ name:String) -> (summaryDictionary:[Int:eitSummary],duplicated:[eitSummary])
+  {
+    var summaries = [eitSummary]()
+    var summaryDictionary = [Int:eitSummary]()
+    var duplicated = [eitSummary]()
+    
+    // Build three tables.  First a matchable summary of all movies that have
+    // sufficient data to summarise.  Second a array of all those matched to the
+    // full summary table (duplicated).  Thirdly a dictionary keyed on the array
+    // index to eventually get a list of all indices with a matching summary
+    // all duplicates
+    if let movieCount = parentViewController?.filelist.count {
+      for movieIndex in 0 ..< movieCount {
+        if let summary = summaryOf(movieIndex, target: name) {
+          if !duplicated.contains(summary) && summaries.contains(summary) {
+            duplicated.append(summary)
+          }
+          summaries.append(summary)
+          summaryDictionary[movieIndex] = summary
+        }
+      }
+    }
+    return (summaryDictionary,duplicated)
+  }
+  
+  private func getListOfNames() -> [String] {
+    var listOfRecordingNames = [String]()
+    if let movieCount = parentViewController?.filelist.count {
+      guard let list = self as NSPopUpButton? else { return listOfRecordingNames }
+      for movieIndex in 0 ..< movieCount {
+        let menuName = list.item(at: movieIndex)!.title
+        var recordingName = menuName
+        if (menuName.contains( " - ")) {
+          let components = menuName.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false)
+          if components.count >= 3 {
+            recordingName = String(components[2])
+          }
+          else {
+            recordingName = String(components[0])
+          }
+        }
+        recordingName = recordingName.trimmingCharacters(in: .whitespaces)
+        recordingName = recordingName.replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
+        if !listOfRecordingNames.contains(recordingName) {
+          listOfRecordingNames.append(recordingName)
+        }
+      }
+    }
+    return listOfRecordingNames.sorted()
+  }
+  
+  /// filter by all name contents and is same episode title
+  @objc private func showAllDuplicated()
+  {
+    let namesList = getListOfNames()
+    guard !namesList.isEmpty else { return }
+    var summaryDictionaryAll = [Int:eitSummary]()
+    var duplicatedAll = [eitSummary]()
+    for name in namesList {
+      let (dictionary, duplicates) = getDuplicatedSummariesFor(name)
+      if !dictionary.isEmpty {
+        summaryDictionaryAll.merge(dictionary, uniquingKeysWith: { (v1, _) in v1})
+        duplicatedAll += duplicates
+      }
+    }
+    setVisibilty(isHidden: {index in  return !isEntryInDuplicates(index, summary: summaryDictionaryAll[index] ?? nil, duplicates: duplicatedAll)})
+  }
+
   /// filter by all name contents and is same episode title
   @objc private func showDuplicatedMatch()
   {
@@ -359,8 +453,15 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
       if firstDeletedIndex == nil {
         firstDeletedIndex = vc.currentFile.indexOfSelectedItem
       }
+      vc.selectFile(self)
       vc.deleteRecording(vc.deleteRecordingButton)
     }
+  }
+  
+  @objc private func deleteSelectionAndFindNextDuplicate()
+  {
+    deleteSelection()
+    showDuplicatedMatch()
   }
   
   /// filter:

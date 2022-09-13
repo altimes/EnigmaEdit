@@ -26,10 +26,15 @@ struct PopUpFilter {
   
   /// Function to populate the menu with description and action to take
   /// - parameter entries: array of touples of title and selector
-  func createMenu(entries:[(title:String,action:Selector)])
+  func createMenu(entries:[(title:String,action:Selector, keyEquiv:String?, keyEquivMaskSet: NSEvent.ModifierFlags?)])
   {
     for item in entries {
-      self.menuAddItem(title: item.title, itemAction: item.action)
+      if item.keyEquiv == nil {
+        self.menuAddItem(title: item.title, itemAction: item.action)
+      }
+      else {
+        self.menuAddItem(title: item.title, itemAction: item.action, keyEquivalentCharacter: item.keyEquiv!, keyEquivalentMaskSet: item.keyEquivMaskSet)
+      }
     }
     
   }
@@ -43,10 +48,30 @@ struct PopUpFilter {
       return
     }
     let menuItem = NSMenuItem(title: itemTitle, action: itemAction, keyEquivalent: "")
+    
     menuItem.isEnabled = false
     filterMenu.addItem(menuItem)
   }
   
+  
+  /// Add an item to the menu with the associated action
+  /// - parameter title: menu text
+  /// - parameter itemAction: void function to call when selected
+
+  private func menuAddItem(title itemTitle: String, itemAction:Selector, keyEquivalentCharacter: String = "", keyEquivalentMaskSet: NSEvent.ModifierFlags? = nil)
+  {
+    guard let filterMenu = menu else {
+      return
+    }
+    let menuItem = NSMenuItem(title: itemTitle, action: itemAction, keyEquivalent: keyEquivalentCharacter)
+    
+    menuItem.isEnabled = false
+    if keyEquivalentMaskSet != nil { menuItem.keyEquivalentModifierMask = keyEquivalentMaskSet!}
+    
+    filterMenu.addItem(menuItem)
+    
+  }
+
   /// Update the popUp menu changing current selection if necessary
   func updatePopUp()
   {
@@ -64,6 +89,10 @@ struct PopUpFilter {
     else {
       _ = selectFirstVisible(from: 0)
     }
+  }
+  
+  func selectFirst() {
+    _ = selectFirstVisible(from: 0)
   }
   
   /// Select first visible item in popUp start at "from" Index
