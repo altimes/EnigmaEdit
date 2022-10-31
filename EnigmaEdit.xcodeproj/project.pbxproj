@@ -54,6 +54,7 @@
 		B7529F561E074BC400C61A49 /* ExtendedEventDescriptorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7529F551E074BC400C61A49 /* ExtendedEventDescriptorController.swift */; };
 		B75540311F0DBBC700349A4F /* TimeLineControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75540301F0DBBC700349A4F /* TimeLineControl.swift */; };
 		B75540331F0DCB7400349A4F /* SwitchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75540321F0DCB7400349A4F /* SwitchControl.swift */; };
+		B778D27428FA38A1008F6FD4 /* ButtonGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778D27328FA38A1008F6FD4 /* ButtonGrid.swift */; };
 		B77B4AC41E30222100037E01 /* RecordingManagementVCExtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B4AC31E30222100037E01 /* RecordingManagementVCExtn.swift */; };
 		B782D36C1F52AC4C00737E70 /* FilmStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B782D36B1F52AC4B00737E70 /* FilmStrip.swift */; };
 		B783947B272520FE0080840B /* DisplayEITEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783947A272520FE0080840B /* DisplayEITEditor.swift */; };
@@ -117,6 +118,7 @@
 		B7529F551E074BC400C61A49 /* ExtendedEventDescriptorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedEventDescriptorController.swift; sourceTree = "<group>"; };
 		B75540301F0DBBC700349A4F /* TimeLineControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineControl.swift; sourceTree = "<group>"; };
 		B75540321F0DCB7400349A4F /* SwitchControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchControl.swift; sourceTree = "<group>"; };
+		B778D27328FA38A1008F6FD4 /* ButtonGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGrid.swift; sourceTree = "<group>"; };
 		B77B4AC31E30222100037E01 /* RecordingManagementVCExtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingManagementVCExtn.swift; sourceTree = "<group>"; };
 		B782D36B1F52AC4B00737E70 /* FilmStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmStrip.swift; sourceTree = "<group>"; };
 		B783947A272520FE0080840B /* DisplayEITEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayEITEditor.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				B71BB6041DFA1DCF0023F4BB /* IMG_1200.png */,
 				B783947A272520FE0080840B /* DisplayEITEditor.swift */,
 				B783947D27268FA00080840B /* DisplayEditor.swift */,
+				B778D27328FA38A1008F6FD4 /* ButtonGrid.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -282,7 +285,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Alan Franklin";
 				TargetAttributes = {
 					B71BB5E11DFA1C820023F4BB = {
@@ -349,6 +352,7 @@
 				B7D4ECE81F2D606A00B9367B /* keyStrokeCatch.swift in Sources */,
 				B74FDD3B1FAE76880092245B /* EnumCollection.swift in Sources */,
 				B71BB5F51DFA1D160023F4BB /* AppDelegate.swift in Sources */,
+				B778D27428FA38A1008F6FD4 /* ButtonGrid.swift in Sources */,
 				B71BB6261DFA1E0D0023F4BB /* TxDocument.swift in Sources */,
 				B71BB6101DFA1DCF0023F4BB /* DescriptorDecoder.swift in Sources */,
 				B71BB6251DFA1E0D0023F4BB /* Recording.swift in Sources */,
@@ -434,6 +438,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -495,6 +500,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -523,6 +529,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20220509;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = EnigmaEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,6 +550,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20220509;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = EnigmaEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

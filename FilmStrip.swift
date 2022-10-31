@@ -11,6 +11,7 @@
 import Cocoa
 import AVFoundation
 import AVKit
+import UniformTypeIdentifiers
 
 @IBDesignable
 class FilmStrip: NSStackView
@@ -410,7 +411,7 @@ extension CGImage {
   {
     let filename = NSString(format: "/Users/alanf/Documents/%d.jpg", imageIndex )
     if let url = CFURLCreateWithFileSystemPath(nil, filename, CFURLPathStyle.cfurlposixPathStyle, false),
-       let targetFile = CGImageDestinationCreateWithURL(url, kUTTypeJPEG, 1, nil)
+       let targetFile = CGImageDestinationCreateWithURL(url, /*kUTTypeJPEG*/ UTType.image as! CFString, 1, nil)
     {
       CGImageDestinationAddImage(targetFile, self, nil)
       return CGImageDestinationFinalize(targetFile)

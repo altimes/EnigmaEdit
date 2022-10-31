@@ -162,6 +162,30 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     }
     return nil
   }
+ 
+  /// Create a limited summary of the recording
+  
+  private func summaryOf2(_ index: Int, target:String = "") -> eitSummary?
+  {
+    guard index >= 0 && index < self.itemArray.count else { return nil }
+        // extract episode title from eit
+        // load the eit file
+        if let baseNameURL = parentViewController?.filelist[index].replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
+        {
+          let movieName = baseNameURL.replacingOccurrences(of: "file://", with: "").removingPercentEncoding
+          
+          var eit = EITInfo()
+          if let EITData = Recording.loadRawDataFrom(file: movieName!+ConstsCuts.EIT_SUFFIX) {
+            if let eitInfo=EITInfo(data: EITData) {
+              eit = eitInfo
+            }
+            return( eitSummary(/* channel: channel,  */ programTitle: eit.programNameText(), episodeTitle: eit.episodeText.lowercased()) )
+          }
+        }
+    return nil
+  }
+  
+
   
   /// Nothing is hidden
   @objc private func showAll()
@@ -513,7 +537,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     alert.window.title = "Filter by Episode Title"
     alert.messageText = "Enter string to filter list (case insensitive)"
 //    let currentItemText = self.selectedItem?.attributedTitle?.string
-    if let currentItemText = summaryOf(self.indexOfSelectedItem, target: "")?.episodeTitle
+    if let currentItemText = summaryOf2(self.indexOfSelectedItem, target: "")?.episodeTitle
     {
       textField.stringValue = alert.messageText
       textField.sizeToFit()
