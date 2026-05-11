@@ -64,6 +64,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
   {
     for index in 0..<self.itemArray.count
     {
+      print("checking item \(index) \(self.itemArray[index].title)")
 //      print("hide test result for \(self.itemArray[index].attributedTitle!.string) is \(hideTest(index))")
       self.itemArray[index].isHidden = hideTest(index)
     }
@@ -102,6 +103,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     let matchTo = target.uppercased()
     if let summary = summaryOf(index) {
       let itemEpisodeTitleString = summary.episodeTitle.uppercased()
+      print("match <\(matchTo)> in <\(itemEpisodeTitleString)>")
       display = itemEpisodeTitleString.contains(matchTo)
     }
     return !display
@@ -137,18 +139,21 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
     guard index >= 0 && index < self.itemArray.count else { return nil }
     // make case insensitive
     let matchTo = target.uppercased()
+    let fields = getFieldsFromAttributedText(self.itemArray[index].attributedTitle!)
+//    print("xx = \(xx)")
     let itemString = removeCountField(from: self.itemArray[index].attributedTitle!.string.uppercased())
     if itemString.contains(matchTo) || target == "" {
       // extract details from attributed title
-      let nameFields = itemString.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false)
-      if nameFields.count >= 3 {
+//      let nameFields = itemString.split(separator: "-", maxSplits: 3, omittingEmptySubsequences: false)
+//      if nameFields.count >= 3 {
 //        let channel = String(nameFields[1]).trimmingCharacters(in: .whitespaces)
-        let programName = String(nameFields[2]).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX.uppercased(), with: "")
+//      let programName = String(nameFields[2]).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX.uppercased(), with: "")
+      let programName = fields.programName
         // extract episode title from eit
         // load the eit file
-        if let baseNameURL = parentViewController?.filelist[index].replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
+        if let baseNameURL = parentViewController?.filelist[index].replacing( ConstsCuts.CUTS_SUFFIX, with: "")
         {
-          let movieName = baseNameURL.replacingOccurrences(of: "file://", with: "").removingPercentEncoding
+          let movieName = baseNameURL.removeFileColonDoubleSlash().removingPercentEncoding
           
           var eit = EITInfo()
           if let EITData = Recording.loadRawDataFrom(file: movieName!+ConstsCuts.EIT_SUFFIX) {
@@ -157,12 +162,104 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
             }
             return( eitSummary(/* channel: channel,  */ programTitle: programName, episodeTitle: eit.episodeText.lowercased()) )
           }
-        }
+//        }
       }
     }
     return nil
   }
  
+  
+  /// Extract fields from the menu display text, taking care of entries with datetime and channel removed
+  /// - Parameter text: Attributed text from menu list
+  /// - Returns: guesstimate of fields
+  func getFieldsFromAttributedText(_ text: NSAttributedString) -> NameFieldStrings {
+      var filenameFields = NameFieldStrings()
+      
+      let itemString = removeCountField(from: text.string)
+      // extract details from attributed title
+      let nameFields = itemString.split(separator: "-", omittingEmptySubsequences: false)
+      if nameFields.count == 4 {  // datetime - channel - program - SnnEnn
+        filenameFields.dateTime = String(nameFields[0]).trimmingCharacters(in: .whitespaces)
+        filenameFields.channel = String(nameFields[1]).trimmingCharacters(in: .whitespaces)
+        filenameFields.programName = String(nameFields[2]).trimmingCharacters(in: .whitespaces)
+        filenameFields.seriesEpisode = String(nameFields[3]).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
+      }
+      // cases are: datetime - channel - program || channel - program - SnnEnn || datetime - program - SnnEnn
+      else if nameFields.count == 3 {
+        let firstField = String(nameFields[0]).trimmingCharacters(in: .whitespaces)
+        let lastField = String(nameFields[2]).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
+        
+        let (dT, sE) = firstFieldLastFieldAreDateOrSeries(firstField, last: lastField)
+        if dT != nil { filenameFields.dateTime = dT! }
+        if sE != nil { filenameFields.seriesEpisode = sE! }
+        
+        let middleField = String(nameFields[1]).trimmingCharacters(in: .whitespaces)
+        
+        // OK that is enough to identify pattern
+        
+        if filenameFields.dateTime != "" && filenameFields.seriesEpisode != "" { // datetime - program - SnnEnn
+          filenameFields.programName = middleField
+        }
+        else if filenameFields.dateTime == "" && filenameFields.seriesEpisode != "" { // channel - program - SnnEnn
+          filenameFields.channel = String(nameFields[0]).trimmingCharacters(in: .whitespaces)
+          filenameFields.programName = middleField
+        }
+        else {  // dateTime != "" && seriesEpisode == ""  -> datetime - channel - program
+          filenameFields.channel = middleField
+          filenameFields.programName = lastField
+        }
+      }
+      
+      // cases are: datetime - program || channel - program || program - SnnEnn
+      else if (nameFields.count == 2 ) {
+        let firstField = String(nameFields[0]).trimmingCharacters(in: .whitespaces)
+        let lastField = String(nameFields[1]).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
+        if (isDateTimeField(firstField)) {
+          filenameFields.dateTime = firstField
+          filenameFields.programName = lastField
+        } else if (isSeriesEpisodeField(lastField)) {
+          filenameFields.programName = firstField
+          filenameFields.seriesEpisode = lastField
+        }
+        else {
+          filenameFields.channel = firstField
+          filenameFields.programName = lastField
+        }
+      }
+      else { // nameFields.count == 1 only the program name (typically a movie)
+        filenameFields.programName = String(nameFields[0]).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
+      }
+      return filenameFields
+  }
+  
+  func isDateTimeField(_ field: String) -> Bool {
+    field.contains(try! Regex("[0-9]{8} [0-9]{4}"))
+  }
+  
+  func isSeriesEpisodeField(_ field: String) -> Bool {
+    field.contains(try! Regex("[sS]{1}[0-9]{2}[eE]{1}[0-9]{2}"))
+  }
+  
+  func firstFieldLastFieldAreDateOrSeries(_ first: String, last: String) -> (dateTime: String?, seriesEpisode: String?) {
+    var dateTime: String?
+    var seriesEpisode: String?
+    
+//    var lastField = String(last).trimmingCharacters(in: .whitespaces)
+    // is last SnnEnn ?
+    if (isSeriesEpisodeField( last)) {
+      seriesEpisode = last
+    }
+    
+    // see if the first field looks like a dateTime "YYYYMMDD HHMM"
+//    var firstField = String(first).trimmingCharacters(in: .whitespaces)
+    if (isDateTimeField(first)) {
+      dateTime = String(first)
+    }
+
+    return (dateTime, seriesEpisode)
+  }
+  
+  
   /// Create a limited summary of the recording
   
   private func summaryOf2(_ index: Int, target:String = "") -> eitSummary?
@@ -172,7 +269,7 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
         // load the eit file
         if let baseNameURL = parentViewController?.filelist[index].replacingOccurrences(of: ConstsCuts.CUTS_SUFFIX, with: "")
         {
-          let movieName = baseNameURL.replacingOccurrences(of: "file://", with: "").removingPercentEncoding
+          let movieName = baseNameURL.removeFileColonDoubleSlash().removingPercentEncoding
           
           var eit = EITInfo()
           if let EITData = Recording.loadRawDataFrom(file: movieName!+ConstsCuts.EIT_SUFFIX) {
@@ -559,5 +656,12 @@ class PopUpWithStatusFilter: PopUpWithContextFilter {
   @objc func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
     //    print("In function "+#file+"/"+#function)
     return filter?.filterMenuEnabled ?? false
+  }
+  
+  struct NameFieldStrings {
+    var dateTime: String = ""
+    var channel: String = ""
+    var programName: String = ""
+    var seriesEpisode: String = ""
   }
 }

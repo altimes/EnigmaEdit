@@ -41,7 +41,11 @@
 	<string>Copyright © 2016 Alan Franklin. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>For Voice Command</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>For Voice Command</string>
 </dict>
 </plist>

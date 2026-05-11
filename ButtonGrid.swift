@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ButtonGrid: View {
-  var list: [List<ButtonParameters>]
+  var list: [LinkededList<ButtonParameters>]
   var longestList: Int {
     var longest = 0
     for entry in list {
@@ -23,21 +23,23 @@ struct ButtonGrid: View {
     }
   }
   
-  func gridView(list: [List<ButtonParameters>]) -> some View
+  func gridView(list: [LinkededList<ButtonParameters>]) -> some View
   {
-    VStack(alignment: .leading, spacing:3) {
+    Grid(verticalSpacing: 3) {
+      //    VStack(alignment: .leading, spacing:3) {
       ForEach((0..<list.count), id: \.self) { rowNumber in
         rowView(list: list[rowNumber])
       }
     }
+//    }
     .frame(maxWidth: 200)
   }
   
-  func rowView (list: List<ButtonParameters>) -> some View
+  func rowView (list: LinkededList<ButtonParameters>) -> some View
   {
     //    let myColor = Color.init(red: 0, green: 200, blue: 240)
     return HStack(spacing: 3) {
-      ForEach(arrayFromList(list: list), id:\.self)  { entry in
+      ForEach(arrayFromLinkededList(list: list), id:\.self)  { entry in
         Button(action: entry.action,
                label: {
           HStack {
@@ -45,8 +47,8 @@ struct ButtonGrid: View {
             Text(entry.title)
           }
           .frame(minWidth: 50)
-          //                  .background(Color.yellow.opacity(0.5))
-          //                  .foregroundColor(Color.black)
+                            .background(Color.yellow.opacity(0.5))
+                            .foregroundColor(Color.black)
         }
         )
       }
@@ -57,7 +59,7 @@ struct ButtonGrid: View {
     }
   }
   
-  func arrayFromList(list: List<ButtonParameters>) -> [ButtonParameters]
+  func arrayFromLinkededList(list: LinkededList<ButtonParameters>) -> [ButtonParameters]
   {
     var array = [ButtonParameters]()
     list.forEach { button in
@@ -65,7 +67,6 @@ struct ButtonGrid: View {
     }
     return array
   }
-  
 }
 
 struct ButtonGrid_Previews: PreviewProvider {
@@ -99,19 +100,19 @@ struct ButtonGrid_Previews: PreviewProvider {
     return (index<=0) ? "arrowtriangle.backward" : "arrowtriangle.forward"
   }
   
-  static func buttonList() -> [List<ButtonParameters>]
+  static func buttonList() -> [LinkededList<ButtonParameters>]
   {
     let rowCount = 5
     let columnCount = 2
-    var arrayOfLists = [List<ButtonParameters>]()
-    var list = List<ButtonParameters>()
+    var arrayOfLists = [LinkededList<ButtonParameters>]()
+    var list = LinkededList<ButtonParameters>()
     for i in 0..<rowCount {
       for j in 0..<columnCount {
         let entry = ButtonParameters(title: "\(i):\(j)", symbol: directionSymbolForIndex(j)  ,action: {print("index = \(j*columnCount+i)")})
         list.append(entry)
       }
       arrayOfLists.append(list)
-      list = List<ButtonParameters>()
+      list = LinkededList<ButtonParameters>()
     }
 //    list.append(ButtonParameters(title: "hello", action: {}))
 //    list.append(ButtonParameters(title: "world a very long button that will wrap", action: {}))
@@ -143,12 +144,12 @@ struct ButtonParameters: Hashable {
 
 // from: https://www.swiftbysundell.com/articles/picking-the-right-data-structure-in-swift/
 
-struct List<Value> {
+struct LinkededList<Value> {
   private(set) var head: Node?
   private(set) var tail: Node?
 }
 
-extension List {
+extension LinkededList {
   class Node {
     var value: Value
     fileprivate(set) weak var prev: Node?
@@ -162,7 +163,7 @@ extension List {
   }
 }
 
-extension List: Sequence {
+extension LinkededList: Sequence {
   func makeIterator() -> AnyIterator<Value> {
     var node = head
     
@@ -174,7 +175,7 @@ extension List: Sequence {
   }
 }
 
-extension List {
+extension LinkededList {
   @discardableResult
   mutating func append( _ newNodeValue: Value) -> Node
   {
@@ -189,7 +190,7 @@ extension List {
   }
 }
 
-extension List {
+extension LinkededList {
   mutating func removeNode(_ node: Node)
   {
     node.prev?.next = node.next
@@ -210,7 +211,7 @@ extension List {
   }
 }
 
-extension List {
+extension LinkededList {
   func count() -> Int{
     var nodeCount = 0
     guard head != nil else { return nodeCount }

@@ -65,7 +65,7 @@ extension ViewController
     for index in 0..<fromPaths.count {
       let fileURL = URL(fileURLWithPath: fromPaths[index])
       do {
-        print("Moving: \(fromPaths[index]) to .Trash")
+        print("Trashing: \(fromPaths[index]) to .Trash")
         try FileManager().trashItem(at: fileURL, resultingItemURL: &resultURL )
         doneURL[index] = resultURL!
       }
@@ -138,8 +138,13 @@ extension ViewController
       //      print (toPaths)
       for index in 0..<fromPaths.count {
         do {
-          print("Moving: \(fromPaths[index]) to \(toPaths[index])")
-          try FileManager().moveItem(atPath: fromPaths[index], toPath: toPaths[index])
+          if FileManager().fileExists(atPath: fromPaths[index]) {
+              print("Moving: \(fromPaths[index]) to \(toPaths[index])")
+              try FileManager().moveItem(atPath: fromPaths[index], toPath: toPaths[index])
+          }
+          else {
+            print("WARNING: No such file as <\(fromPaths[index])>")
+          }
         }
         catch _ {  // delete failed for item
           result.message = "Move to Trash Failed for \(recording.movieShortName!)"
@@ -202,6 +207,9 @@ extension ViewController
         currentFile.isEnabled = true
         setPrevNextButtonState(filelistIndex)
       }
+    }
+    if result.message != "" {
+      print("arghh! \(result.message)")
     }
 
     return result
@@ -272,8 +280,10 @@ extension ViewController
   }
 
   func reloadCache() {
-    disconnectCurrentMovieFromGUI()
-    changeFile(currentFile.indexOfSelectedItem)
-    setDropDownColourForIndex(currentFile.indexOfSelectedItem)
+    Task {
+      disconnectCurrentMovieFromGUI()
+      await changeFile(currentFile.indexOfSelectedItem)
+      setDropDownColourForIndex(currentFile.indexOfSelectedItem)
+    }
   }
 }

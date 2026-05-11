@@ -29,6 +29,10 @@ final class Cache<Key: Hashable, Value> {
   
   func value(forKey key: Key) -> Value? {
     let entry = wrapped.object(forKey: WrappedKey(key))
+    let isCutsKey = (key as! String).contains(".cuts")
+    if entry != nil && isCutsKey {
+      if (debug) {print("for key \(key), entry size is \(entry!.value as! Data).count")}
+    }
     return entry?.value
   }
   

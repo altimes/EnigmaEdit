@@ -64,6 +64,7 @@
 		B7BC20B72432CE400026A473 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BC20B62432CE400026A473 /* Cache.swift */; };
 		B7C5BF921EB5F64300604FA1 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5BF911EB5F64300604FA1 /* TimeLineView.swift */; };
 		B7D4ECE81F2D606A00B9367B /* keyStrokeCatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4ECE71F2D606A00B9367B /* keyStrokeCatch.swift */; };
+		B7E56D292DBB30B50047624E /* UIImageScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E56D282DBB30B50047624E /* UIImageScale.swift */; };
 		B7E6F6DE1E00AC2200F0ADA6 /* EITEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E6F6DD1E00AC2200F0ADA6 /* EITEditController.swift */; };
 		B7E6F6E01E00B35C00F0ADA6 /* ShortEventDescriptorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E6F6DF1E00B35C00F0ADA6 /* ShortEventDescriptorViewController.swift */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		B7BC20B62432CE400026A473 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		B7C5BF911EB5F64300604FA1 /* TimeLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeLineView.swift; path = EnigmaEdit/TimeLineView.swift; sourceTree = "<group>"; };
 		B7D4ECE71F2D606A00B9367B /* keyStrokeCatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyStrokeCatch.swift; sourceTree = "<group>"; };
+		B7E56D282DBB30B50047624E /* UIImageScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageScale.swift; sourceTree = "<group>"; };
 		B7E6F6DD1E00AC2200F0ADA6 /* EITEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EITEditController.swift; path = EnigmaEdit/EITEditController.swift; sourceTree = "<group>"; };
 		B7E6F6DF1E00B35C00F0ADA6 /* ShortEventDescriptorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShortEventDescriptorViewController.swift; path = EnigmaEdit/ShortEventDescriptorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 		B76F5EB91DFA2B8C000C3D19 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B7E56D282DBB30B50047624E /* UIImageScale.swift */,
 				B730A4AB1E419D02000E10E7 /* scissors_icon-icons.com_50046-16.png */,
 				B730A4A71E419ABE000E10E7 /* scissors_icon-icons.com_50046.icns */,
 				B730A4A31E419344000E10E7 /* scissors_icon-icons.com_50046-128.png */,
@@ -291,7 +294,6 @@
 					B71BB5E11DFA1C820023F4BB = {
 						CreatedOnToolsVersion = 8.1;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -386,6 +388,7 @@
 				B71BB6021DFA1D730023F4BB /* CutsPreferencesController.swift in Sources */,
 				B7529F561E074BC400C61A49 /* ExtendedEventDescriptorController.swift in Sources */,
 				B77B4AC41E30222100037E01 /* RecordingManagementVCExtn.swift in Sources */,
+				B7E56D292DBB30B50047624E /* UIImageScale.swift in Sources */,
 				B71BB6221DFA1E0D0023F4BB /* FileHandlers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,7 +459,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable Voice Command";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Voice Command Enabling";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -513,7 +518,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable Voice Command";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Voice Command Enabling";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -526,18 +533,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20220509;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 76Y4T47YU5;
 				INFOPLIST_FILE = EnigmaEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dyndns.franklinoffner.EnigmaEdit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENVIRONMENT = 3;
 				SWIFT_VERSION = 5.0;
 			};
@@ -547,18 +561,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20220509;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 76Y4T47YU5;
 				INFOPLIST_FILE = EnigmaEdit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dyndns.franklinoffner.EnigmaEdit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_DEBUG_IMPLICIT_OBJC_ENVIRONMENT = 3;
 				SWIFT_VERSION = 5.0;
 			};

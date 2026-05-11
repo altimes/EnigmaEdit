@@ -28,44 +28,10 @@
             timestampString = "576632449.940142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "lastOutCutPTS"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "65D11859-62B1-4CBA-BADE-91322CB0279C - dc30b3862256807c"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.Recording.lastOutCutPTS.getter : Swift.UInt64"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/Recording.swift"
-                  timestampString = "514964243.448205"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "38">
-               </Location>
-               <Location
-                  uuid = "65D11859-62B1-4CBA-BADE-91322CB0279C - aaacf46d8ede8a50"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.Recording.(lastOutCutPTS.getter : Swift.UInt64).(implicit closure #1)"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/Recording.swift"
-                  timestampString = "514964243.452068"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "10">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -79,44 +45,10 @@
             timestampString = "575632439.702788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "959"
-            endingLineNumber = "959"
+            startingLineNumber = "1002"
+            endingLineNumber = "1002"
             landmarkName = "wellOrdered()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "524571E0-57C6-435D-B571-D330851D36E1 - dd357513c215023a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.CutsFile.wellOrdered () -&gt; EnigmaEdit.CutsFile"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/CutsFile.swift"
-                  timestampString = "521864175.027388"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "861"
-                  endingLineNumber = "861"
-                  offsetFromSymbolStart = "897">
-               </Location>
-               <Location
-                  uuid = "524571E0-57C6-435D-B571-D330851D36E1 - dd357513c215023a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.CutsFile.wellOrdered () -&gt; EnigmaEdit.CutsFile"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/CutsFile.swift"
-                  timestampString = "521864175.030522"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "861"
-                  endingLineNumber = "861"
-                  offsetFromSymbolStart = "4296">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -146,16 +78,6 @@
             symbolName = "CGPostError"
             moduleName = "">
             <Locations>
-               <Location
-                  uuid = "3F501C45-128E-4AEF-B79C-2AAFB8D49121 - 6b2a6ff60c6dfa83"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CGPostError"
-                  moduleName = "CoreGraphics"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,8 +91,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2074"
-            endingLineNumber = "2074"
+            startingLineNumber = "2149"
+            endingLineNumber = "2149"
             landmarkName = "actionsSetEnabled(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -185,8 +107,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2079"
-            endingLineNumber = "2079"
+            startingLineNumber = "2154"
+            endingLineNumber = "2154"
             landmarkName = "actionsSetEnabled(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -201,8 +123,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2083"
-            endingLineNumber = "2083"
+            startingLineNumber = "2158"
+            endingLineNumber = "2158"
             landmarkName = "actionsSetEnabled(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -217,8 +139,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3008"
-            endingLineNumber = "3008"
+            startingLineNumber = "3134"
+            endingLineNumber = "3134"
             landmarkName = "addPlayerNeverComesReadyTimer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -233,8 +155,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2599"
-            endingLineNumber = "2599"
+            startingLineNumber = "2724"
+            endingLineNumber = "2724"
             landmarkName = "setupAVPlayerFor(_:startTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -249,8 +171,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "752"
-            endingLineNumber = "752"
+            startingLineNumber = "761"
+            endingLineNumber = "761"
             landmarkName = "setPrevNextButtonState(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -265,8 +187,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1516"
-            endingLineNumber = "1516"
+            startingLineNumber = "1564"
+            endingLineNumber = "1564"
             landmarkName = "pairsListTitleSorter(_:s2:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -281,42 +203,10 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1647"
-            endingLineNumber = "1647"
+            startingLineNumber = "1721"
+            endingLineNumber = "1721"
             landmarkName = "sortNamePairs(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "777E1F72-033C-4293-AA40-6B7FB9185647 - c4583f505314b136"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.ViewController.sortNamePairs(inout Swift.Array&lt;EnigmaEdit.namePair&gt;) -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1598"
-                  endingLineNumber = "1598"
-                  offsetFromSymbolStart = "1602">
-               </Location>
-               <Location
-                  uuid = "777E1F72-033C-4293-AA40-6B7FB9185647 - 615ae831059a5a76"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #8 (EnigmaEdit.namePair, EnigmaEdit.namePair) -&gt; Swift.Bool in implicit closure #7 (EnigmaEdit.ViewController) -&gt; (EnigmaEdit.namePair, EnigmaEdit.namePair) -&gt; Swift.Bool in EnigmaEdit.ViewController.sortNamePairs(inout Swift.Array&lt;EnigmaEdit.namePair&gt;) -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1598"
-                  endingLineNumber = "1598"
-                  offsetFromSymbolStart = "88">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -329,8 +219,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1721"
-            endingLineNumber = "1721"
+            startingLineNumber = "1795"
+            endingLineNumber = "1795"
             landmarkName = "sortFilelist()"
             landmarkType = "7">
          </BreakpointContent>
@@ -345,57 +235,10 @@
             filePath = "../CutsEditor/CutsEditor/MovieCuttingOperation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "main()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9F452682-364C-4E00-B35D-AF3AE2CAB2C9 - d1cf78e60e26b032"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.MovieCuttingOperation.main() -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/MovieCuttingOperation.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "4003">
-               </Location>
-               <Location
-                  uuid = "9F452682-364C-4E00-B35D-AF3AE2CAB2C9 - d1cf78e60e26b032"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EnigmaEdit.MovieCuttingOperation.main() -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/MovieCuttingOperation.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "4086">
-               </Location>
-               <Location
-                  uuid = "9F452682-364C-4E00-B35D-AF3AE2CAB2C9 - 6ae103340e8eb10c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 () -&gt; () in EnigmaEdit.MovieCuttingOperation.main() -&gt; ()"
-                  moduleName = "EnigmaEdit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alanf/Documents/Swift/CutsEditor/CutsEditor/MovieCuttingOperation.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "85">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -408,8 +251,8 @@
             filePath = "PopUpWithStatusFilter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
             landmarkName = "showMatchingCurrent()"
             landmarkType = "7">
          </BreakpointContent>
@@ -424,8 +267,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1005"
-            endingLineNumber = "1005"
+            startingLineNumber = "1036"
+            endingLineNumber = "1036"
             landmarkName = "timelineChanged()"
             landmarkType = "7">
          </BreakpointContent>
@@ -440,8 +283,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1442"
-            endingLineNumber = "1442"
+            startingLineNumber = "1490"
+            endingLineNumber = "1490"
             landmarkName = "seekToAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -456,8 +299,8 @@
             filePath = "PopUpWithStatusFilter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "summaryOf(_:target:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -472,8 +315,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4325"
-            endingLineNumber = "4325"
+            startingLineNumber = "4466"
+            endingLineNumber = "4466"
             landmarkName = "remoteMountAndSource()"
             landmarkType = "7">
          </BreakpointContent>
@@ -488,8 +331,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1100"
-            endingLineNumber = "1100"
+            startingLineNumber = "1131"
+            endingLineNumber = "1131"
             landmarkName = "changeFile(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -504,8 +347,8 @@
             filePath = "../CutsEditor/CutsEditor/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1895"
-            endingLineNumber = "1895"
+            startingLineNumber = "1970"
+            endingLineNumber = "1970"
             landmarkName = "getFontAttributesDurationForIndex(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -520,8 +363,8 @@
             filePath = "../CutsEditor/Recording.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "init(rootURLName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -536,8 +379,8 @@
             filePath = "../CutsEditor/Recording.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "init(rootURLName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -568,8 +411,8 @@
             filePath = "../CutsEditor/Recording.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
             landmarkName = "getStoredDurations()"
             landmarkType = "7">
          </BreakpointContent>
@@ -600,8 +443,8 @@
             filePath = "../CutsEditor/AccessPoints.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "nearestApIndexForPTSFromPlayer(ptsValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -616,8 +459,8 @@
             filePath = "../CutsEditor/AccessPoints.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
             landmarkName = "nearestApIndexForPTSFromPlayer(ptsValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -632,25 +475,9 @@
             filePath = "../CutsEditor/AccessPoints.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "init?(data:fileName:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6F4F0D13-D2F2-40DF-8777-D2DD43956BBF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PopUpWithStatusFilter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
-            landmarkName = "showNamed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -712,8 +539,8 @@
             filePath = "../CutsEditor/CutsEditor/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
             landmarkName = "openEITEdit(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -728,8 +555,8 @@
             filePath = "PopUpWithStatusFilter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
+            startingLineNumber = "521"
+            endingLineNumber = "521"
             landmarkName = "showAllDuplicated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -744,8 +571,8 @@
             filePath = "PopUpWithStatusFilter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
+            startingLineNumber = "493"
+            endingLineNumber = "493"
             landmarkName = "getListOfNames()"
             landmarkType = "7">
          </BreakpointContent>
@@ -754,15 +581,375 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2FDF1688-E93C-4852-B3DC-D45BAB669721"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PopUpWithStatusFilter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "540"
-            endingLineNumber = "540"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
             landmarkName = "showTitled()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F43D5B69-5686-4D96-A98A-65C6EDCEE129"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdHunterVCExtn.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "doBinaryJump(button:direction:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57D7D795-C4DA-47E0-B3D3-14E8041EFFD7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "947"
+            endingLineNumber = "947"
+            landmarkName = "updateVideoOverlay(updateText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "164B26F7-7C62-4946-9FD5-18C74F44525C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "862"
+            endingLineNumber = "862"
+            landmarkName = "createVideoOverlayView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07627C3F-706B-4042-960A-9ECF5A9A5A40"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "950"
+            endingLineNumber = "950"
+            landmarkName = "updateVideoOverlay(updateText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "388A6928-0CF3-47B0-8526-7A9020857B25"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1597"
+            endingLineNumber = "1597"
+            landmarkName = "pairsListEpisodeSorter(_:s2:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3F367E6-D890-4C44-8392-3132E19A3FD2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecordingManagementVCExtn.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "remoteMoveToTrash(recording:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56AACCBD-7A8C-4D20-8A6E-EBF07749177B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecordingManagementVCExtn.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "localMoveToTrash(recording:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA8823B4-B237-46C5-BF89-D6D881DC41EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecordingManagementVCExtn.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "remoteMoveToTrash(recording:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B856E9B6-E777-4F1E-802D-B88A3B146F2B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopUpWithStatusFilter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "setVisibilty(isHidden:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64BB8221-393D-4F41-AC8F-167E6CD409BA"
+            shouldBeEnabled = "No"
+            condition = "!ptsSorted"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/AccessPoints.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "init?(data:fileName:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent>
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBDC8682-A991-4E38-B7E9-67449C860238"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/MovieCuttingOperation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "main()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82FEB019-31B4-4C84-A1F6-03D170862CC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3782"
+            endingLineNumber = "3782"
+            landmarkName = "moveMarkBySteps(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A513D2A5-A4E7-447F-90EE-66DAFDB84A5C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A29B3EE-9E6B-4859-A266-F5151C7C9CB0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2638"
+            endingLineNumber = "2638"
+            landmarkName = "createAVAssetFromURL(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3AB0C816-2C7B-4B08-A986-E7B414E542DA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2630"
+            endingLineNumber = "2630"
+            landmarkName = "createAVAssetFromURL(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D638F955-47AB-4878-9F0E-B465BB4CA84A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2617"
+            endingLineNumber = "2617"
+            landmarkName = "createAVAssetFromURL(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19EAF12F-3D44-4ACF-9043-4CD93B8DE6FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2602"
+            endingLineNumber = "2602"
+            landmarkName = "createAVAssetFromURL(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22D74EF4-F3FE-4B0F-8145-1D49D61D751B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "712"
+            endingLineNumber = "712"
+            landmarkName = "fileToOpenChange(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "561F4EBE-72DB-478E-AD9D-D7C909A0705C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/Recording.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "init(rootURLName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8BAD2DBE-B262-4930-9D30-BCFD9F903066"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/AccessPoints.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "init?(data:fileName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0798C23-05B4-45DF-BB9E-00EE75239B37"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2289"
+            endingLineNumber = "2289"
+            landmarkName = "observeValue(forKeyPath:of:change:context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D9E4A9F-2ABE-4D86-A5C7-0532036279AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CutsEditor/CutsEditor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2293"
+            endingLineNumber = "2293"
+            landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
