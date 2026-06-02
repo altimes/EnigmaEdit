@@ -282,7 +282,7 @@ extension ViewController
   func reloadCache() {
     Task {
       disconnectCurrentMovieFromGUI()
-      await changeFile(currentFile.indexOfSelectedItem)
+      changeFile(currentFile.indexOfSelectedItem)
       setDropDownColourForIndex(currentFile.indexOfSelectedItem)
     }
   }
